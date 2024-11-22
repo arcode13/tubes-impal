@@ -1,0 +1,199 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css');
+
+.left-side-menu {
+    width: 280px !important;
+    background-color: #d6d0bc;
+}
+
+.navbar-custom {
+    background-color: #d6d0bc;
+}
+
+.menu-title {
+    letter-spacing: 1px;
+}
+
+.sidebar-content a {
+    padding: 12px 20px !important;
+    margin-bottom: 20px;
+}
+
+.sidebar-content a.active {
+    padding: 8px 5px !important;
+    background-color: #D86669 !important;
+    border: none !important;
+    border-radius: 15px;
+}
+
+li.mm-active {
+    padding: 0 20px;
+}
+
+.sidebar-content a i {
+    color: #D86669 !important;
+    background-color: #ffffff !important;
+    border-radius: 10px !important;
+    padding: 13px !important;
+    width: 45px !important;
+}
+
+.sidebar-content a span {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.content-page {
+    margin-left: 280px !important;
+}
+
+.notification-box {
+    background-color: #f5f0e8; /* Warna background krem */
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 8000px; /* Batas lebar kotak */
+    margin: 20px auto; /* Untuk memposisikan kotak di tengah */
+  }
+  
+  .notification-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .notification-icon {
+    background-color: #d94e4e; /* Warna merah lembut */
+    color: #fff; /* Warna ikon putih */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 20px;
+  }
+  
+  .notification-text h4 {
+    margin: 0;
+    font-size: 18px;
+    color: #b43f3f; /* Warna teks merah */
+  }
+  
+  .notification-text p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #555; /* Warna teks abu-abu */
+  }
+  
+  .notification-button {
+    background-color: #d94e4e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: auto; /* Untuk mendorong tombol ke kanan */
+  }
+  
+  .notification-button:hover {
+    background-color: #b43f3f;
+  }
+
+  .statistics-boxes {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+  }
+  
+  .stat-box {
+    background-color: #f5f0e8; /* Warna krem */
+    border-radius: 10px;
+    padding: 15px;
+    flex: 1;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .stat-icon {
+    background-color: #d1c6b8; /* Warna icon */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .stat-text h4 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .stat-text p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #777;
+  }
+  
+  /* Responsive untuk Mobile */
+  @media (max-width: 768px) {
+    .statistics-boxes {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  
+  .paket {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f8d7da; /* Warna background untuk kesan perhatian */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .paket-header {
+    font-size: 18px;
+    font-weight: bold;
+    color: #721c24; /* Warna teks header */
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .paket-content {
+    text-align: center;
+  }
+  
+  .paket-content img {
+    max-width: 100px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+  }
+  
+  .paket-content p {
+    font-size: 14px;
+    color: #721c24;
+    margin: 0;
+  }
+  
+  .paket-footer {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #6c757d; /* Warna teks untuk informasi waktu */
+  }
