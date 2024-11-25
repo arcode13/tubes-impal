@@ -1,4 +1,5 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css');
+<<<<<<< HEAD
 
 .left-side-menu {
     width: 280px !important;
@@ -7,6 +8,47 @@
 
 .navbar-custom {
     background-color: #d6d0bc;
+=======
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #2f3847;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.font-weight-600 {
+    font-weight: 600 !important;
+}
+
+.font-weight-500 {
+    font-weight: 500 !important;
+}
+
+.left-side-menu {
+    width: 280px !important;
+    background-color: #ffffff;
+}
+
+.navbar-custom {
+    background-color: #ffffff;
+>>>>>>> fb0bb7c (frontend update dashboard)
 }
 
 .menu-title {
@@ -27,6 +69,7 @@
 }
 
 #sidebar-menu>ul>li>a {
+<<<<<<< HEAD
     padding: 8px 5px !important;
 }
 
@@ -46,14 +89,67 @@
     color: #ffffff !important;
     text-decoration: none;
     background-color: #D86669 !important;
+=======
+    color: #2f3847;
+}
+
+.sidebar-content a span {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+#sidebar-menu>ul>li.mm-active>a i {
+    background-color: #ffffff !important;
+    color: #ff5c75 !important;
+}
+
+#sidebar-menu>ul>li.mm-active>a span {
+    color: #ffffff !important;
+}
+
+#sidebar-menu>ul>li>a {
+    padding: 8px 5px !important;
+    border-radius: 15px;
+    transition: 0.5s;
+}
+
+#sidebar-menu>ul>li>ul {
+    padding-top: 13px;
+}
+
+#sidebar-menu>ul>li>a:hover i {
+    color: #ff5c75 !important;
+    text-decoration: none;
+    background-color: #ffffff !important;
+    border-radius: 15px !important;
+}
+
+#sidebar-menu>ul>li>a:focus i {
+    color: #ff5c75 !important;
+    background-color: #ffffff !important;
+}
+
+#sidebar-menu>ul>li.mm-active>a {
+    color: #ffffff !important;
+    text-decoration: none;
+    background-color: #ff5c75 !important;
+>>>>>>> fb0bb7c (frontend update dashboard)
     border: none !important;
     border-radius: 15px !important;
 }
 
+<<<<<<< HEAD
 #sidebar-menu>ul>li>a:active,#sidebar-menu>ul>li>a:focus,#sidebar-menu>ul>li>a:hover {
     color: #ffffff !important;
     text-decoration: none;
     background-color: #D86669 !important;
+=======
+#sidebar-menu>ul>li>a:active, #sidebar-menu>ul>li>a:focus, #sidebar-menu>ul>li>a:hover {
+    color: #ffffff !important;
+    text-decoration: none;
+    background-color: #ff5c75 !important;
+>>>>>>> fb0bb7c (frontend update dashboard)
     border-radius: 15px !important;
 }
 
@@ -63,27 +159,46 @@
 
 .sidebar-content a.active {
     padding: 8px 5px !important;
+<<<<<<< HEAD
     background-color: #D86669 !important;
+=======
+    background-color: #ff5c75 !important;
+>>>>>>> fb0bb7c (frontend update dashboard)
     border: none !important;
     border-radius: 15px;
 }
 
 .sidebar-content a i {
+<<<<<<< HEAD
     color: #D86669 !important;
     background-color: #ffffff !important;
     border-radius: 10px !important;
     padding: 13px !important;
     width: 45px !important;
+=======
+    color: #ffffff;
+    background-color: #ff5c75;
+    border-radius: 15px !important;
+    padding: 13px !important;
+    width: 45px !important;
+    transition: 0.5s;
+>>>>>>> fb0bb7c (frontend update dashboard)
 }
 
 .nav-second-level li a, .nav-thrid-level li a {
     font-weight: 600;
+<<<<<<< HEAD
     font-size: 17px;
     padding: 10px 5px !important;
+=======
+    font-size: 15px;
+    padding: 8px 5px !important;
+>>>>>>> fb0bb7c (frontend update dashboard)
     transition: .2s;
 }
 
 .nav-second-level li a:hover, .nav-thrid-level li a:hover {
+<<<<<<< HEAD
     color: #ffffff;
 }
 
@@ -92,6 +207,43 @@
     font-weight: 700;
     color: #ffffff;
     letter-spacing: 0.5px;
+=======
+    color: #ff5c75;
+}
+
+.left-side-menu-condensed .left-side-menu #sidebar-menu>ul>li>a.active {
+    background-color: #ff5c75 !important;
+}
+
+.left-side-menu-condensed .left-side-menu #sidebar-menu>ul>li>a:active,.left-side-menu-condensed .left-side-menu #sidebar-menu>ul>li>a:focus,.left-side-menu-condensed .left-side-menu #sidebar-menu>ul>li>a:hover {
+    color: #ff5c75 !important;
+}
+
+.left-side-menu-condensed .left-side-menu #sidebar-menu>ul>li:hover>ul a:hover {
+    color: #ff5c75 !important;
+}
+
+.left-side-menu-condensed .left-side-menu #sidebar-menu>ul ul li.active a {
+    color: #ff5c75 !important;
+}
+
+.left-side-menu-condensed .left-side-menu #sidebar-menu>ul>li:hover>a {
+    color: #ffffff !important;
+    background-color: #ff5c75 !important;
+}
+
+.left-side-menu-condensed .left-side-menu {
+    width: 101px !important;
+}
+
+.left-side-menu-condensed .content-page {
+    margin-left: 101px !important;
+}
+
+.left-side-menu-condensed .left-side-menu #sidebar-menu > ul > li:hover > a i {
+    background-color: #ffffff !important;
+    color: #ff5c75 !important;
+>>>>>>> fb0bb7c (frontend update dashboard)
 }
 
 .content-page {
@@ -99,11 +251,20 @@
 }
 
 .page-title {
+<<<<<<< HEAD
     padding: 50px 0 20px;
+=======
+    padding: 30px 0 20px;
+}
+
+.page-title h4 {
+    font-size: 18px;
+>>>>>>> fb0bb7c (frontend update dashboard)
 }
 
 .text-welcome {
     font-weight: 700;
+<<<<<<< HEAD
     color: #D86669;
 }
 
@@ -258,6 +419,78 @@
     color: #6c757d; /* Warna teks untuk informasi waktu */
   }
   
+=======
+    color: #ff5c75;
+}
+
+.shadow-custom {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.rounded-custom {
+    border-radius: 15px;
+}
+
+.avatar-custom {
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+}
+
+.notification-box {
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.notification-box h5 {
+    margin-top: 5px;
+}
+
+.notification-box p {
+    font-size: 13px;
+}
+
+@media (max-width: 768px) {
+    .notification-box p {
+        margin-top: 15px;
+    }
+}
+
+.goods {
+    color: #ffffff;
+    padding: 10px 10px 15px;
+    border-radius: 15px;
+    background-color: #ff5c75;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    width: 100%;
+}
+
+.goods img {
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.goods-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.goods-date {
+    font-size: 11px;
+    color: #ffffff;
+}
+
+.goods p {
+    font-size: 13px;
+    margin: 8px 0 0;
+}
+
+>>>>>>> fb0bb7c (frontend update dashboard)
 .footer {
     left: 280px;
 }
