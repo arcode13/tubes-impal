@@ -1,14 +1,4 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css');
-<<<<<<< HEAD
-
-.left-side-menu {
-    width: 280px !important;
-    background-color: #d6d0bc;
-}
-
-.navbar-custom {
-    background-color: #d6d0bc;
-=======
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 body {
@@ -48,7 +38,6 @@ p {
 
 .navbar-custom {
     background-color: #ffffff;
->>>>>>> fb0bb7c (frontend update dashboard)
 }
 
 .menu-title {
@@ -69,27 +58,6 @@ p {
 }
 
 #sidebar-menu>ul>li>a {
-<<<<<<< HEAD
-    padding: 8px 5px !important;
-}
-
-#sidebar-menu>ul>li>ul {
-    padding-top: 10px;
-}
-
-
-#sidebar-menu>ul>li>a:hover {
-    color: #ffffff !important;
-    text-decoration: none;
-    background-color: #D86669 !important;
-    border-radius: 15px !important;
-}
-
-#sidebar-menu>ul>li.mm-active>a {
-    color: #ffffff !important;
-    text-decoration: none;
-    background-color: #D86669 !important;
-=======
     color: #2f3847;
 }
 
@@ -134,22 +102,14 @@ p {
     color: #ffffff !important;
     text-decoration: none;
     background-color: #ff5c75 !important;
->>>>>>> fb0bb7c (frontend update dashboard)
     border: none !important;
     border-radius: 15px !important;
 }
 
-<<<<<<< HEAD
-#sidebar-menu>ul>li>a:active,#sidebar-menu>ul>li>a:focus,#sidebar-menu>ul>li>a:hover {
-    color: #ffffff !important;
-    text-decoration: none;
-    background-color: #D86669 !important;
-=======
 #sidebar-menu>ul>li>a:active, #sidebar-menu>ul>li>a:focus, #sidebar-menu>ul>li>a:hover {
     color: #ffffff !important;
     text-decoration: none;
     background-color: #ff5c75 !important;
->>>>>>> fb0bb7c (frontend update dashboard)
     border-radius: 15px !important;
 }
 
@@ -159,55 +119,28 @@ p {
 
 .sidebar-content a.active {
     padding: 8px 5px !important;
-<<<<<<< HEAD
-    background-color: #D86669 !important;
-=======
     background-color: #ff5c75 !important;
->>>>>>> fb0bb7c (frontend update dashboard)
     border: none !important;
     border-radius: 15px;
 }
 
 .sidebar-content a i {
-<<<<<<< HEAD
-    color: #D86669 !important;
-    background-color: #ffffff !important;
-    border-radius: 10px !important;
-    padding: 13px !important;
-    width: 45px !important;
-=======
     color: #ffffff;
     background-color: #ff5c75;
     border-radius: 15px !important;
     padding: 13px !important;
     width: 45px !important;
     transition: 0.5s;
->>>>>>> fb0bb7c (frontend update dashboard)
 }
 
 .nav-second-level li a, .nav-thrid-level li a {
     font-weight: 600;
-<<<<<<< HEAD
-    font-size: 17px;
-    padding: 10px 5px !important;
-=======
     font-size: 15px;
     padding: 8px 5px !important;
->>>>>>> fb0bb7c (frontend update dashboard)
     transition: .2s;
 }
 
 .nav-second-level li a:hover, .nav-thrid-level li a:hover {
-<<<<<<< HEAD
-    color: #ffffff;
-}
-
-.sidebar-content a span {
-    font-size: 18px;
-    font-weight: 700;
-    color: #ffffff;
-    letter-spacing: 0.5px;
-=======
     color: #ff5c75;
 }
 
@@ -243,7 +176,6 @@ p {
 .left-side-menu-condensed .left-side-menu #sidebar-menu > ul > li:hover > a i {
     background-color: #ffffff !important;
     color: #ff5c75 !important;
->>>>>>> fb0bb7c (frontend update dashboard)
 }
 
 .content-page {
@@ -251,175 +183,15 @@ p {
 }
 
 .page-title {
-<<<<<<< HEAD
-    padding: 50px 0 20px;
-=======
     padding: 30px 0 20px;
 }
 
 .page-title h4 {
     font-size: 18px;
->>>>>>> fb0bb7c (frontend update dashboard)
 }
 
 .text-welcome {
     font-weight: 700;
-<<<<<<< HEAD
-    color: #D86669;
-}
-
-.notification-box {
-    background-color: #f5f0e8; /* Warna background krem */
-    border-radius: 10px;
-    padding: 15px;
-    display: flex;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 8000px; /* Batas lebar kotak */
-    margin: 0 auto 20px; /* Untuk memposisikan kotak di tengah */
-  }
-  
-  .notification-content {
-    display: flex;
-    align-items: center;
-    width: 100%;
-  }
-  
-  .notification-icon {
-    background-color: #d94e4e; /* Warna merah lembut */
-    color: #fff; /* Warna ikon putih */
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 15px;
-    font-size: 20px;
-  }
-  
-  .notification-text h4 {
-    margin: 0;
-    font-size: 18px;
-    color: #b43f3f; /* Warna teks merah */
-  }
-  
-  .notification-text p {
-    margin: 5px 0 0;
-    font-size: 14px;
-    color: #555; /* Warna teks abu-abu */
-  }
-  
-  .notification-button {
-    background-color: #d94e4e;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 8px 15px;
-    font-size: 14px;
-    cursor: pointer;
-    margin-left: auto; /* Untuk mendorong tombol ke kanan */
-  }
-  
-  .notification-button:hover {
-    background-color: #b43f3f;
-  }
-
-  .statistics-boxes {
-    display: flex;
-    gap: 15px;
-    justify-content: space-between;
-  }
-  
-  .stat-box {
-    background-color: #f5f0e8; /* Warna krem */
-    border-radius: 10px;
-    padding: 15px;
-    flex: 1;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .stat-icon {
-    background-color: #d1c6b8; /* Warna icon */
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    color: #555;
-    margin-bottom: 10px;
-  }
-  
-  .stat-text h4 {
-    margin: 0;
-    font-size: 20px;
-    color: #333;
-  }
-  
-  .stat-text p {
-    margin: 5px 0 0;
-    font-size: 14px;
-    color: #777;
-  }
-  
-  /* Responsive untuk Mobile */
-  @media (max-width: 768px) {
-    .statistics-boxes {
-      flex-direction: column;
-      gap: 10px;
-    }
-  }
-  
-  .paket {
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #D86669; /* Warna background untuk kesan perhatian */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    color: white;
-  }
-
-  .paket img {
-    width: 100%;
-  }
-
-  .paket-title {
-    font-size: 23px;
-    font-weight: 700;
-    color: white;
-  }
-
-  .paket-date {
-      font-size: 10px;
-      color: white;
-  }
-  
-  
-  .paket-content img {
-    max-width: 100px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-  }
-  
-  .paket-content p {
-    font-size: 12px;
-    text-align: justify;
-  }
-  
-  .paket-footer {
-    margin-top: 10px;
-    font-size: 12px;
-    color: #6c757d; /* Warna teks untuk informasi waktu */
-  }
-  
-=======
     color: #ff5c75;
 }
 
@@ -490,7 +262,6 @@ p {
     margin: 8px 0 0;
 }
 
->>>>>>> fb0bb7c (frontend update dashboard)
 .footer {
     left: 280px;
 }
