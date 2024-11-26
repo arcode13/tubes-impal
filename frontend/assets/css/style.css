@@ -140,6 +140,15 @@ p {
     transition: .2s;
 }
 
+#sidebar-menu>ul>li>a.active {
+    color: #ffffff;
+}
+
+#sidebar-menu>ul>li>a.active i {
+    color: #ff5c75;
+    background-color: #ffffff;
+}
+
 .nav-second-level li a:hover, .nav-thrid-level li a:hover {
     color: #ff5c75;
 }
@@ -178,6 +187,11 @@ p {
     color: #ff5c75 !important;
 }
 
+.nav-second-level li>a.active, .nav-thrid-level li>a.active {
+    color: #ff5c75;
+    background-color: transparent !important;
+}
+
 .content-page {
     margin-left: 280px;
 }
@@ -195,12 +209,30 @@ p {
     color: #ff5c75;
 }
 
+.form-control:focus {
+    border-color: #ff5c75;
+}
+
 .shadow-custom {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .rounded-custom {
     border-radius: 15px;
+}
+
+.page-item.active .page-link {
+    background-color: #ff5c75;
+    border-color: #ff5c75;
+}
+
+.page-link:focus {
+    -webkit-box-shadow: 0 0 0 .15rem rgb(255 92 117 / 25%);
+    box-shadow: 0 0 0 .15rem rgb(255 92 117 / 25%);
+}
+
+.table {
+    color: #2f3847;
 }
 
 .avatar-custom {
@@ -262,55 +294,88 @@ p {
     margin: 8px 0 0;
 }
 
-.footer {
-    left: 280px;
+label[for="image"] {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+  width: 116px;
+  height: 118px;
+  gap: 8px;
+  margin-right: 20px;
+  margin-bottom: 0;
+  border: 2px dotted #c2c2c2;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.rounded-2 {
+  border-radius: 8px;
+}
+
+.remove-list {
+  position: absolute;
+  font-size: 13px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #ff5c75;
+  padding: 2px 7px;
+  border-radius: 50%;
+  border: 2px solid #f6f6f7;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.room-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+    overflow: auto;
+}
+
+.room-layout .room-table.first-room-table, .door {
+    width: 115px;
+    margin-bottom: 170px;
+}
+
+.room-layout .room-table.last-room-table {
+    margin-top: -88px;
+}
+
+.room-layout .bed, .room-layout .room-table, .room-layout .door {
+    font-weight: 600;
+    color: #d9534f;
+    background-color: #f7f7f7;
+    border: 1px solid #d9534f;
+    border-radius: 5px;
+}
+
+.room-layout .bed {
+    width: 215px;
+    padding: 20px 10px;
+}
+
+.room-layout .bed.bed-custom {
+    margin-top: -100px;
+}
+
+.room-layout .room-table {
+    padding: 15px;
+    width: 115px;
+}
+
+.room-layout .door {
+    padding: 10px;
 }
 
  /*sign up*/
 .authentication-bg {
     background-color: #d6d0bc;
-}
-
-h3 {
-    color: #d8575d;
-}
-
-.input-group-text {
-    color: #d8575d;
-}
-
-/* pelaporan_mahasiswa */
- 
-.form-control  {
-  width: 161px;
-  color: black;
-}
-
-.alasan-izin {
-  width: 100% !important;
-}
-
-.btn {
-  color: black;
-}
-
-.gedung {
-  display: flex;
-  justify-content: end;
-}
-
-.btn-gedung {
-  color: #d8575d;
-  background-color: #d6d0bc;
-  font-weight: 700;
-}
-
-.text-alasan-izin {
-  margin-top: 90px;
-}
-
-.btn-send {
-  background-color: #d8575d;
 }
 
 /* tampilan awal */
@@ -409,4 +474,8 @@ h3 {
   .image-section {
       margin-top: 20px;
   }
+}
+
+.footer {
+    left: 280px;
 }
