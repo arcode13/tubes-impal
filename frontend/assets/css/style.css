@@ -279,4 +279,134 @@ h3 {
     color: #d8575d;
 }
 
+/* pelaporan_mahasiswa */
  
+.form-control  {
+  width: 161px;
+  color: black;
+}
+
+.alasan-izin {
+  width: 100% !important;
+}
+
+.btn {
+  color: black;
+}
+
+.gedung {
+  display: flex;
+  justify-content: end;
+}
+
+.btn-gedung {
+  color: #d8575d;
+  background-color: #d6d0bc;
+  font-weight: 700;
+}
+
+.text-alasan-izin {
+  margin-top: 90px;
+}
+
+.btn-send {
+  background-color: #d8575d;
+}
+
+/* tampilan awal */
+
+ body.landing {
+  font-family: Arial, sans-serif;
+  background-color: #f5f0e8;
+  color: #333;
+  line-height: 1.6;
+} 
+
+/* Header Section */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #f5f0e8;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  color: #d94e4e;
+}
+
+.header-buttons .btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-btn {
+  background-color: #d6d0bc;
+  color: #333;
+}
+
+.signup-btn {
+  background-color: #d94e4e;
+  color: #fff;
+}
+
+.signup-btn:hover {
+  background-color: #a83838;
+}
+
+/* Main Section */
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  background-color: #f5f0e8;
+}
+
+.welcome-section {
+  max-width: 50%;
+}
+
+.welcome-section h2 {
+  font-size: 2.5rem;
+  color: #d94e4e;
+  margin-bottom: 20px;
+}
+
+.welcome-section p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.image-section .welcome-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .main {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .welcome-section {
+      max-width: 100%;
+  }
+
+  .image-section {
+      margin-top: 20px;
+  }
+}
