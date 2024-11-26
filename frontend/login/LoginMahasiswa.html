@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Help Desk</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #d6d0bc; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            padding: 0 50px;
+            box-sizing: border-box;
+        }
+
+        .image-container {
+            max-width: 60%;
+        }
+
+        .image-container img {
+            width: 60%;
+            height: auto;
+        }
+
+        h1 {
+            position: absolute;
+            top: 15%;
+            right: 18%;
+            font-size: 3rem;
+            color: #d35454;
+            margin: 0;
+        }
+
+        label {
+            position: absolute;
+            font-size: 1.7rem;
+            color: #777;
+        }
+
+        #email-label {
+            top: 30%;
+            right: 43.3%;
+        }
+
+        #password-label {
+            top: 50%;
+            right: 40%;
+        }
+
+        input {
+            position: absolute;
+            width: 600px;
+            padding: 15px 20px;
+            border: 1px solid #ccc;
+            border-radius: 500px;
+            box-sizing: border-box;
+            font-size: 2rem;
+            background-color: #f2f9ff;
+        }
+
+        #email {
+            top: 35%;
+            right: 11%;
+        }
+
+        #password {
+            top: 55%;
+            right: 11%;
+            padding-right: 50px;
+        }
+
+        .password-container {
+            position: relative;
+        }
+
+        .toggle-password {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            background: none;
+            border: none;
+        }     
+    
+        button {
+            position: absolute;
+            top: 68%;
+            right: 25%;
+            width: 170px;
+            padding: 20px;
+            border: none;
+            background-color: #d35454;
+            color: #fff;
+            font-size: 2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+        button:hover {
+            background-color: #b94141;
+        }
+
+        .clickable-text {
+            position: absolute;
+            top: 620px; 
+            right: 500px; 
+            font-size: 23px;
+            font-weight: bold;
+            color: #ffffff;
+            text-decoration: none; 
+            cursor: pointer;
+        }
+
+        
+        .clickable-text:hover {
+            color: #ffffff; 
+            text-decoration: underline; 
+        }
+
+        .clickable-text2 {
+            position: absolute;
+            top: 620px; 
+            right: 250px; 
+            font-size: 23px;
+            font-weight: bold;
+            color: #D8575D;
+            text-decoration: none; 
+            cursor: pointer;
+        }
+
+        
+        .clickable-text:hover2 {
+            color: #ffffff; 
+            text-decoration: underline; 
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="image-container">
+        <img src="C:\Users\User\Downloads\tamplate (2)\tamplate\assets\images\iconLoginHelpdesk.png" alt="Deskripsi Gambar">
+    </div>
+
+    
+    <h1>Selamat Datang!</h1>
+    <label for="email" id="email-label">Email</label>
+    <input type="email" id="email" placeholder=>
+
+    <label for="password" id="password-label">Password</label>
+    <input type="password" id="password" placeholder=>
+
+    <button>Sign In</button>
+    <a href="https://example.com" class="clickable-text">Are You new?</a>
+    <a href="https://example.com" class="clickable-text2">Create an Account</a>
+
+</body>
+</html>
