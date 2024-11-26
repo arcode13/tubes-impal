@@ -8,7 +8,7 @@
         <title>DormHub</title>
         
         <!-- App Favicon -->
-        <link rel="shortcut icon" href="../assets/images/logo_dormhub.svg">
+        <link rel="shortcut icon" href="../assets/images/favicon.ico">
         
         <!-- App CSS -->
         <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -22,7 +22,7 @@
                 <div class="container-fluid">
                     <a href="index.html" class="navbar-brand mr-0 mr-md-2 logo">
                         <span class="logo-lg">
-                            <img src="../assets/images/logo_dormhub.svg" alt="" height="24">
+                            <img src="../assets/images/logo.png" alt="" height="24">
                             <span class="d-inline h5 ml-1 text-logo">DormHub</span>
                         </span>
                         <span class="logo-sm">
@@ -77,17 +77,23 @@
                             <li>
                                 <a href="javascript: void(0);">
                                     <i class="fa fa-file"></i>
-                                    <span>Pelaporan</span>
+                                    <span>Laporan</span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li>
-                                        <a href="buat-laporan-umum.html">Buat Laporan</a>
+                                        <a href="LaporanUmum.html">Buat Laporan</a>
                                     </li>
                                     <li>
-                                        <a href="daftar-laporan-umum.html">Daftar Laporan</a>
+                                        <a href="DaftarLaporanUmum.html">Daftar Laporan</a>
                                     </li>
                                 </ul>
+                            </li>
+                            <li>
+                                <a href="InformasiKamar.html">
+                                    <i class="fa fa-bed"></i>
+                                    <span>Informasi Kamar</span>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -98,36 +104,83 @@
             <div class="content-page">
                 <div class="content">
                     <div class="container-fluid">
-                        <div class="form-group">
-                            <label class="form-control-label"></label>
-                                <select class="form-control plac rounded-pill">
-                                    <option disabled selected>Jenis Pelaporan</option>
-                                    <option>Pelaporan Izin</option>
-                                    <option>Pelaporan Keluhan</option>
-                                </select>
-                        </div>
-                        <div class="gedung">
-                            <span class="btn btn-gedung text mr-2"> Gedung : 1</span>
-                            <span class="btn btn-gedung text"> Kamar : 101 </span>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Alasan Izin</label>
-                            <textarea class="form-control alasan-izin" placeholder="Isi disini..." id="exampleFormControlTextarea1" rows="6"></textarea>
-                        </div> 
-                        <form>
-                            <div class="form-group">
-                              <label for="exampleFormControlFile1"> Bukti (opsional)</label>
-                              <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                        <div class="row page-title">
+                            <div class="col-md-12">
+                                <h4 class="mb-1 mt-0">Buat Laporan</h4>
                             </div>
-                        </form>   
-                        <div class="form-group mb-0 text-right">
-                            <button class="btn btn-send text-white px-4" type="submit" > Kirim
-                            </button>
-                        </div> 
+                        </div>
+                        <div class="row">
+                            <div class="offset-lg-2 col-lg-7">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <form method="POST">
+                                            <div class="form-group">
+                                                <label>Kategori Laporan</label>
+                                                <select class="form-control custom-select" name="category">
+                                                    <option disabled selected>Pilih Salah Satu</option>
+                                                    <option value="Izin">Izin</option>
+                                                    <option value="Keluhan">Keluhan</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Keterangan</label>
+                                                <textarea class="form-control" name="information" placeholder="Berikan alasan atau keluhan" rows="4"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Bukti (Opsional)</label>
+                                                <div class="d-flex">
+                                                    <label id="custom" for="image"><i class="fa-regular fa-images"></i><small>Upload</small></label>
+                                                    <input type="file" name="image" id="image" hidden>
+                                                    <div id="list-images"></div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group text-right">
+                                                <button type="reset" class="btn btn-light">Ulangi</button>
+                                                <button type="submit" class="btn btn-danger">Buat Laporan</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>      
-
+                
+                <script>
+                    const imagesFile = document.getElementById('image');
+                    const listimage = document.getElementById('list-images');
+                    const removeList = document.querySelectorAll('#remove-list');
+                    document.addEventListener('DOMContentLoaded', function() {
+                        imagesFile.addEventListener('change', function(e) {
+                            e.preventDefault();
+                            const imageFiles = e.target.files;
+                            listimage.innerHTML = '';
+                            for (let index = 0; index < imageFiles.length; index++) {
+                                const reader = new FileReader();
+                                reader.readAsDataURL(imageFiles[index]);
+                                reader.addEventListener('load', () => {
+                                    const img = `
+                                    <div class="position-relative" data-item="${index + 1}" style="width: max-content;">
+                                        <img id="displayimg" class="rounded-2" src="${reader.result}" width="115" height="115" alt="" srcset="">
+                                        <span data-img="${index + 1}" id="remove-list" class="remove-list">X</span>
+                                    </div>`;
+                                    listimage.insertAdjacentHTML('beforeend', img);
+                                });
+                            }
+                        });
+                        listimage.addEventListener('click', function(e) {
+                            if (e.target.id === 'remove-list') {
+                                const elemData = e.target.dataset.img;
+                                if (elemData) {
+                                    if (confirm("Hapus Bukti?")) {
+                                        listimage.removeChild(e.target.parentElement);
+                                    }
+                                }
+                            }
+                        });
+                    });
+                </script>
+                
                 <footer class="footer">
                     <div class="container-fluid">
                         <div class="row">
