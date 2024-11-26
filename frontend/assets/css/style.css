@@ -266,6 +266,17 @@ p {
     left: 280px;
 }
 
- /* login */
+ /*sign up*/
+.authentication-bg {
+    background-color: #d6d0bc;
+}
+
+h3 {
+    color: #d8575d;
+}
+
+.input-group-text {
+    color: #d8575d;
+}
 
  
