@@ -81,24 +81,9 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript: void(0);">
-                                    <i class="fa fa-file"></i>
-                                    <span>Laporan</span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li>
-                                        <a href="LaporanUmum.html">Buat Laporan</a>
-                                    </li>
-                                    <li>
-                                        <a href="DaftarLaporanUmum.html">Daftar Laporan</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
                                 <a href="InformasiKamar.html">
                                     <i class="fa fa-bed"></i>
-                                    <span>Informasi Kamar</span>
+                                    <span>Info Mahasiswa</span>
                                 </a>
                             </li>
                         </ul>
@@ -110,6 +95,66 @@
             <div class="content-page">
                 <div class="content">
                     <div class="container-fluid">
+                        <div class="row page-title">
+                            <div class="col-md-12">
+                                <h4 class="mb-1 mt-0 text-welcome">Halo Senior Residence, Selamat Pagi 👋</h4>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="row mb-5">
+                            <div class="col-md-4">
+                                <div class="card shadow-custom rounded-custom mb-3">
+                                    <div class="card-body p-0">
+                                        <div class="media p-3 d-flex align-items-center">
+                                            <div class="media-body">
+                                                <h3 class="text-uppercase font-weight-600 d-block m-0 mb-2">15</h3>
+                                                <span class="font-weight-500">Pelaporan Izin Mahasiswa Bulan Ini</span>
+                                            </div>
+                                            <div class="align-self-center ml-3">
+                                                <div class="d-flex justify-content-center align-items-center bg-danger rounded-circle text-white avatar-custom">
+                                                    <i class="fas fa-file-alt fa-1x"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card shadow-custom rounded-custom mb-3">
+                                    <div class="card-body p-0">
+                                        <div class="media p-3 d-flex align-items-center">
+                                            <div class="media-body">
+                                                <h3 class="text-uppercase font-weight-600 d-block m-0 mb-2">250</h3>
+                                                <span class="font-weight-500">Total Seluruh Pelaporan Mahasiswa</span>
+                                            </div>
+                                            <div class="align-self-center ml-3">
+                                                <div class="d-flex justify-content-center align-items-center bg-danger rounded-circle text-white avatar-custom">
+                                                    <i class="fas fa-file-alt fa-1x"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card shadow-custom rounded-custom mb-3">
+                                    <div class="card-body p-0">
+                                        <div class="media p-3 d-flex align-items-center">
+                                            <div class="media-body">
+                                                <h3 class="text-uppercase font-weight-600 d-block m-0 mb-2">365</h3>
+                                                <span class="font-weight-500">Total Seluruh Mahasiwa </span>
+                                            </div>
+                                            <div class="align-self-center ml-3">
+                                                <div class="d-flex justify-content-center align-items-center bg-danger rounded-circle text-white avatar-custom">
+                                                    <i class="fas fa-user-graduate fa-1x"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="row page-title">
                             <div class="col-md-12">
                                 <h4 class="mb-1 mt-0">Daftar Laporan</h4>
@@ -135,26 +180,10 @@
                                                     <tr class="text-center">
                                                         <td>1</td>
                                                         <td>Izin</td>
-                                                        <td>pulang kampung 5 hari</td>
-                                                        <td><img src="../assets/images/bukti/" alt="Bukti" class="rounded" width="100"></td>
-                                                        <td><span class="btn btn-warning btn-sm">Menunggu</span></td>
-                                                        <td>25 Oktober 2024 - 00:00:32</td>
-                                                    </tr>
-                                                    <tr class="text-center">
-                                                        <td>2</td>
-                                                        <td>Keluhan</td>
-                                                        <td>Dispenser Rusak</td>
+                                                        <td>Rapat Organisasi</td>
                                                         <td><img src="../assets/images/bukti/" alt="Bukti" class="rounded" width="100"></td>
                                                         <td><span class="btn btn-success btn-sm">Setuju</span></td>
-                                                        <td>28 Oktober 2024 - 28:33:15</td>
-                                                    </tr>
-                                                    <tr class="text-center">
-                                                        <td>3</td>
-                                                        <td>Izin</td>
-                                                        <td>mau ikut UKM pulang jam 11 siang</td>
-                                                        <td><img src="../assets/images/bukti/" alt="Bukti" class="rounded" width="100"></td>
-                                                        <td><span class="btn btn-danger btn-sm">Tolak</span></td>
-                                                        <td>29 Oktober 2024 - 10:22:46</td>
+                                                        <td>25 Oktober 2024 - 00:00:32</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -165,7 +194,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <script>
                     $(document).ready(function () {
                         $('#table').DataTable({
@@ -173,7 +202,7 @@
                         });
                     });
                 </script>
-                
+
                 <footer class="footer">
                     <div class="container-fluid">
                         <div class="row">
@@ -186,6 +215,7 @@
             </div>
         </div>
         
+       
         <!-- Vendor JS -->
         <script src="../assets/js/vendor.min.js"></script>
         
