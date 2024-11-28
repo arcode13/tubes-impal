@@ -475,6 +475,121 @@ label[for="image"] {
       margin-top: 20px;
   }
 }
+body {
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-right: 25px;
+    max-width: 1160px;
+    margin-top: 150px;
+}
+
+/* Style untuk heading */
+.text-welcome {
+    color: #ff5c75;
+    font-size: 22px;
+    
+}
+
+/* Style untuk tombol lantai */
+.floor-buttons {
+    display: flex;
+    gap: 8px;
+    margin-top: 22px;
+    margin-bottom: 15px;
+}
+
+.floor-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    color: #666;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(120, 119, 119, 0.1);
+    transition: all 0.2s ease;
+}
+
+.floor-button.active {
+    background-color: #ff5c75;
+    color: white;
+}
+
+/* Style untuk informasi gedung */
+.building-info {
+    color: #ff5c75;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 25px;
+    
+}
+
+/* Style untuk select kamar */
+.kamar {
+   
+    margin-top: 30px;
+}
+
+#kamar {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background-color: #ff5c75;
+    color: white;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#kamar option {
+    background-color: white;
+    color: #000;
+    padding: 8px;
+}
+
+/* Style untuk tombol kirim */
+.submit-btn {
+    padding: 6px 16px;
+    background: #ff5c75;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #f0f0f0;
+    transition: background-color 0.2s ease;
+    margin-top: 40px;
+    margin-left: 1045px;
+}
+
+.submit-btn:hover {
+    background: #f5f5f5;
+}
+
+/* Style untuk content page */
+.content-page {
+    margin-left: 280px; /* Sesuaikan dengan lebar sidebar */
+    padding: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+    .content-page {
+        margin-left: 0;
+    }
+    
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+}
 
 .footer {
     left: 280px;
