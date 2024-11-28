@@ -594,3 +594,18 @@ body {
 .footer {
     left: 280px;
 }
+
+/* profil */
+.container-profile  {
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container-atribut  {
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+    margin-bottom: 20px;
+}

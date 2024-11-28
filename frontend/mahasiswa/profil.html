@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Title -->
+        <title>DormHub</title>
+        
+        <!-- App Favicon -->
+        <link rel="shortcut icon" href="../assets/images/logo_dormhub.svg">
+        
+        <!-- App CSS -->
+        <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/css/style.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="navbar navbar-expand flex-column flex-md-row navbar-custom">
+                <div class="container-fluid">
+                    <a href="index.html" class="navbar-brand mr-0 mr-md-2 logo">
+                        <span class="logo-lg">
+                            <img src="../assets/images/logo_dormhub.svg" alt="" height="24">
+                            <span class="d-inline h5 ml-1 text-logo">DormHub</span>
+                        </span>
+                        <span class="logo-sm">
+                            <img src="../assets/images/logo_dormhub.svg" alt="" height="24">
+                        </span>
+                    </a>
+                    <ul class="navbar-nav bd-navbar-nav flex-row list-unstyled menu-left mb-0">
+                        <li class="">
+                            <button class="button-menu-mobile open-left disable-btn">
+                                <i data-feather="menu" class="menu-icon"></i>
+                                <i data-feather="x" class="close-icon"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="left-side-menu">
+                <div class="media user-profile mt-2 mb-2">
+                    <img src="../assets/images/users/avatar-1.jpg" class="avatar-sm rounded-circle mr-2" alt="Profil">
+                    <img src="../assets/images/users/avatar-1.jpg" class="avatar-xs rounded-circle mr-2" alt="Profil">
+                    <div class="media-body">
+                        <h6 class="pro-user-name mt-0 mb-0">John Doe</h6>
+                        <span class="pro-user-desc font-weight-600">Mahasiswa</span>
+                    </div>
+                    <div class="dropdown align-self-center profile-dropdown-menu">
+                        <a class="dropdown-toggle mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <span data-feather="chevron-down"></span>
+                        </a>
+                        <div class="dropdown-menu profile-dropdown">
+                            <a href="profil.html" class="dropdown-item notify-item">
+                                <i data-feather="user" class="icon-dual icon-xs mr-2"></i>
+                                <span>Profil</span>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i data-feather="log-out" class="icon-dual icon-xs mr-2"></i>
+                                <span>Keluar</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-content">
+                    <div id="sidebar-menu" class="slimscroll-menu">
+                        <ul class="metismenu" id="menu-bar">
+                            <li class="menu-title">Menu</li>
+                            <li>
+                                <a href="Dashboard.html">
+                                    <i class="fa fa-home"></i>
+                                    <span>Beranda</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0);">
+                                    <i class="fa fa-file"></i>
+                                    <span>Laporan</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li>
+                                        <a href="LaporanUmum.html">Buat Laporan</a>
+                                    </li>
+                                    <li>
+                                        <a href="DaftarLaporanUmum.html">Daftar Laporan</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="InformasiKamar.html">
+                                    <i class="fa fa-bed"></i>
+                                    <span>Informasi Kamar</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            
+            <div class="content-page">
+                <div class="content">
+                    <div class="container-profile">
+                        <div class="row mb-5">
+                            <div class="col-md-12">
+                                <div class="card shadow-custom rounded-custom mb-3">
+                                    <div class="card-body p-3">
+                                        <div class="media p-3 d-flex align-items-center">
+                                            <div class="media-body">
+                                                <div class="form-group text-right">
+                                                    <button type="submit" class="btn btn-danger">Edit Profil</button> 
+                                                </div>
+                                                <img src="../assets/images/users/avatar-1.jpg" class="avatar-mm rounded-circle mr-2" alt="profi-poto">
+                                                <h3 class="text-uppercase font-weight-600 d-block m-0 mb-2">KAILA FIORENZA GAMPO</h3>
+                                                <span class="font-weight-500">Mahasiswa</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+
+                <div class="container-atribut">
+                    <div class="row mb-5">
+                        <div class="col-md-12">
+                            <div class="card shadow-custom rounded-custom mb-3">
+                                <div class="card-body p-3">
+                                    <div class="media p-3 d-flex align-items-center">
+                                        <div class="media-body">
+                                            <ul>
+                                                <ul>
+                                                    <span class="font-weight-500">Nama Lengkap</span>
+                                                </ul>
+                                                <ul>
+                                                    <span class="font-weight-500">KAILA FIORENZA GAMPO</span>
+                                                </ul>
+                                            </ul>
+                                            <ul>
+                                                <ul>
+                                                    <span class="font-weight-500">Nomor HP</span>
+                                                </ul>
+                                                <ul>
+                                                    <span class="font-weight-500">08xxxxxxxxxx</span>
+                                                </ul>
+                                            </ul>
+                                            <ul>
+                                                <ul>
+                                                    <span class="font-weight-500">Jenis Kelamin</span>
+                                                </ul>
+                                                <ul>
+                                                    <span class="font-weight-500">Perempuan</span>
+                                                </ul>
+                                            </ul>
+                                            <ul>
+                                                <ul>
+                                                    <span class="font-weight-500">Email</span>
+                                                </ul>
+                                                <ul>
+                                                    <span class="font-weight-500">example@student.telkomuniversity.ac.id</span>
+                                                </ul>
+                                            </ul>
+                                            <ul>
+                                                <ul>
+                                                    <span class="font-weight-500">Password</span>
+                                                </ul>
+                                                <ul>
+                                                    <span class="font-weight-500">************</span>
+                                                </ul>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                Copyright &copy; 2024 DormHub. All Rights Reserved
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        
+        <!-- Vendor JS -->
+        <script src="../assets/js/vendor.min.js"></script>
+        
+        <!-- App JS -->
+        <script src="../assets/js/app.min.js"></script>
+    </body>
+</html>
