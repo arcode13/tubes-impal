@@ -5,10 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <!-- Title -->
-        <title>DormHub</title>
+        <title>DormHub - Beranda</title>
         
         <!-- App Favicon -->
-        <link rel="shortcut icon" href="../assets/images/logo_dormhub.svg">
+        <link rel="shortcut icon" href="../assets/images/favicon.ico">
         
         <!-- App CSS -->
         <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -26,13 +26,13 @@
         <div id="wrapper">
             <div class="navbar navbar-expand flex-column flex-md-row navbar-custom">
                 <div class="container-fluid">
-                    <a href="index.html" class="navbar-brand mr-0 mr-md-2 logo">
+                    <a href="" class="navbar-brand mr-0 mr-md-2 logo">
                         <span class="logo-lg">
-                            <img src="../assets/images/logo_dormhub.svg" alt="" height="24">
+                            <img src="../assets/images/logo.png" alt="" height="24">
                             <span class="d-inline h5 ml-1 text-logo">DormHub</span>
                         </span>
                         <span class="logo-sm">
-                            <img src="../assets/images/logo_dormhub.svg" alt="" height="24">
+                            <img src="../assets/images/logo.png" alt="" height="24">
                         </span>
                     </a>
                     <ul class="navbar-nav bd-navbar-nav flex-row list-unstyled menu-left mb-0">
@@ -43,6 +43,11 @@
                             </button>
                         </li>
                     </ul>
+                    <ul class="navbar-nav flex-row ml-auto d-flex list-unstyled topnav-menu float-right mb-0">
+                        <a href="../mahasiswa/Dashboard.html" class="btn btn-sm btn-danger rounded">
+                            <i class="fa fa-arrow-left mr-1"></i> Kembali
+                        </a>
+                    </ul>
                 </div>
             </div>
             <div class="left-side-menu">
@@ -51,14 +56,14 @@
                     <img src="../assets/images/users/avatar-1.jpg" class="avatar-xs rounded-circle mr-2" alt="Profil">
                     <div class="media-body">
                         <h6 class="pro-user-name mt-0 mb-0">John Doe</h6>
-                        <span class="pro-user-desc font-weight-600">Senior Residence</span>
+                        <span class="pro-user-desc font-weight-600">Mahasiswa</span>
                     </div>
                     <div class="dropdown align-self-center profile-dropdown-menu">
                         <a class="dropdown-toggle mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                             <span data-feather="chevron-down"></span>
                         </a>
                         <div class="dropdown-menu profile-dropdown">
-                            <a href="profil.html" class="dropdown-item notify-item">
+                            <a href="Profil.html" class="dropdown-item notify-item">
                                 <i data-feather="user" class="icon-dual icon-xs mr-2"></i>
                                 <span>Profil</span>
                             </a>
@@ -75,13 +80,28 @@
                         <ul class="metismenu" id="menu-bar">
                             <li class="menu-title">Menu</li>
                             <li>
-                                <a href="DashboardSR.html">
+                                <a href="Dashboard.html">
                                     <i class="fa fa-home"></i>
                                     <span>Beranda</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="InfoMahasiswaSR.html">
+                                <a href="javascript: void(0);">
+                                    <i class="fa fa-users"></i>
+                                    <span>Pengguna</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li>
+                                        <a href="DaftarPenggunaMahasiswa">Mahasiswa</a>
+                                    </li>
+                                    <li>
+                                        <a href="DaftarPenggunaHelpDesk">Help Desk</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="InfoMahasiswa.html">
                                     <i class="fa fa-bed"></i>
                                     <span>Info Mahasiswa</span>
                                 </a>
@@ -97,10 +117,9 @@
                     <div class="container-fluid">
                         <div class="row page-title">
                             <div class="col-md-12">
-                                <h4 class="mb-1 mt-0 text-welcome">Halo Senior Residence, Selamat Pagi 👋</h4>
+                                <h4 class="mb-1 mt-0 text-welcome">Hallo John Doe, Selamat Pagi 👋‹</h4>
                             </div>
                         </div>
-                        
                         
                         <div class="row mb-5">
                             <div class="col-md-4">
@@ -113,7 +132,7 @@
                                             </div>
                                             <div class="align-self-center ml-3">
                                                 <div class="d-flex justify-content-center align-items-center bg-danger rounded-circle text-white avatar-custom">
-                                                    <i class="fas fa-file-alt fa-1x"></i>
+                                                    <i class="fas fa-file-alt"></i>
                                                 </div>
                                             </div>
                                         </div>
@@ -125,12 +144,12 @@
                                     <div class="card-body p-0">
                                         <div class="media p-3 d-flex align-items-center">
                                             <div class="media-body">
-                                                <h3 class="text-uppercase font-weight-600 d-block m-0 mb-2">250</h3>
+                                                <h3 class="text-uppercase font-weight-600 d-block m-0 mb-2">20</h3>
                                                 <span class="font-weight-500">Total Seluruh Pelaporan Mahasiswa</span>
                                             </div>
                                             <div class="align-self-center ml-3">
                                                 <div class="d-flex justify-content-center align-items-center bg-danger rounded-circle text-white avatar-custom">
-                                                    <i class="fas fa-file-alt fa-1x"></i>
+                                                    <i class="fas fa-file-alt"></i>
                                                 </div>
                                             </div>
                                         </div>
@@ -143,11 +162,11 @@
                                         <div class="media p-3 d-flex align-items-center">
                                             <div class="media-body">
                                                 <h3 class="text-uppercase font-weight-600 d-block m-0 mb-2">365</h3>
-                                                <span class="font-weight-500">Total Seluruh Mahasiwa </span>
+                                                <span class="font-weight-500">Total Seluruh Mahasiswa</span>
                                             </div>
                                             <div class="align-self-center ml-3">
                                                 <div class="d-flex justify-content-center align-items-center bg-danger rounded-circle text-white avatar-custom">
-                                                    <i class="fas fa-user-graduate fa-1x"></i>
+                                                    <i class="fas fa-users"></i>
                                                 </div>
                                             </div>
                                         </div>
@@ -155,21 +174,18 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row page-title">
-                            <div class="col-md-12">
-                                <h4 class="mb-1 mt-0">Daftar Laporan Mahasiswa</h4>
-                            </div>
-                        </div>
+                        
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
+                                        <h4 class="header-title mt-0 mb-4">Daftar Laporan</h4>
                                         <div class="table-responsive">
                                             <table class="table table-bordered table-striped" id="table">
                                                 <thead>
                                                     <tr class="text-center">
                                                         <th>No.</th>
-                                                        <th>Kategori</th>
+                                                        <th>Mahasiswa</th>
                                                         <th>Keterangan</th>
                                                         <th>Bukti</th>
                                                         <th>Status</th>
@@ -179,11 +195,35 @@
                                                 <tbody>
                                                     <tr class="text-center">
                                                         <td>1</td>
-                                                        <td>Izin</td>
-                                                        <td>Rapat Organisasi</td>
+                                                        <td>John Doe</td>
+                                                        <td>pulang kampung 5 hari</td>
                                                         <td><img src="../assets/images/bukti/" alt="Bukti" class="rounded" width="100"></td>
-                                                        <td><span class="btn btn-success btn-sm">Setuju</span></td>
+                                                        <td align="center">
+                                                            <div class="btn-group">
+                                                                <button type="button" class="btn btn-sm btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menunggu <i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item" href="Dashboard/status/1/setuju">Setuju</a>
+                                                                    <a class="dropdown-item" href="Dashboard/status/1/tolak">Tolak</a>
+                                                            	</div>
+                                                            </div>
+                                                        </td>
                                                         <td>25 Oktober 2024 - 00:00:32</td>
+                                                    </tr>
+                                                    <tr class="text-center">
+                                                        <td>2</td>
+                                                        <td>John Doe</td>
+                                                        <td>mau ikut UKM pulang jam 11 siang</td>
+                                                        <td><img src="../assets/images/bukti/" alt="Bukti" class="rounded" width="100"></td>
+                                                        <td align="center">
+                                                            <div class="btn-group">
+                                                                <button type="button" class="btn btn-sm btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tolak <i class="icon"><span data-feather="chevron-down"></span></i></button>
+                                                                <div class="dropdown-menu">
+                                                                    <a class="dropdown-item" href="Dashboard/status/2/setuju">Setuju</a>
+                                                                    <a class="dropdown-item" href="Dashboard/status/2/tolak">Tolak</a>
+                                                            	</div>
+                                                            </div>
+                                                        </td>
+                                                        <td>29 Oktober 2024 - 10:22:46</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -194,7 +234,7 @@
                         </div>
                     </div>
                 </div>
-
+                
                 <script>
                     $(document).ready(function () {
                         $('#table').DataTable({
@@ -215,7 +255,6 @@
             </div>
         </div>
         
-       
         <!-- Vendor JS -->
         <script src="../assets/js/vendor.min.js"></script>
         

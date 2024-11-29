@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <!-- Title -->
-        <title>DormHub - Informasi Kamar</title>
+        <title>DormHub - Info Mahasiswa</title>
         
         <!-- App Favicon -->
         <link rel="shortcut icon" href="../assets/images/favicon.ico">
@@ -36,6 +36,11 @@
                                 <i data-feather="x" class="close-icon"></i>
                             </button>
                         </li>
+                    </ul>
+                    <ul class="navbar-nav flex-row ml-auto d-flex list-unstyled topnav-menu float-right mb-0">
+                        <a href="mahasiswa/Dashboard.html" class="btn btn-sm btn-danger rounded">
+                            <i class="fa fa-arrow-left mr-1"></i> Kembali
+                        </a>
                     </ul>
                 </div>
             </div>
@@ -76,23 +81,23 @@
                             </li>
                             <li>
                                 <a href="javascript: void(0);">
-                                    <i class="fa fa-file"></i>
-                                    <span>Laporan</span>
+                                    <i class="fa fa-users"></i>
+                                    <span>Pengguna</span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li>
-                                        <a href="BuatLaporanUmum.html">Buat Laporan</a>
+                                        <a href="DaftarPenggunaMahasiswa">Mahasiswa</a>
                                     </li>
                                     <li>
-                                        <a href="DaftarLaporanUmum.html">Daftar Laporan</a>
+                                        <a href="DaftarPenggunaHelpDesk">Help Desk</a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="InformasiKamar.html">
+                                <a href="InfoMahasiswa.html">
                                     <i class="fa fa-bed"></i>
-                                    <span>Informasi Kamar</span>
+                                    <span>Info Mahasiswa</span>
                                 </a>
                             </li>
                         </ul>
@@ -106,10 +111,39 @@
                     <div class="container-fluid">
                         <div class="row page-title">
                             <div class="col-md-12">
-                                <h4 class="mb-1 mt-0">Informasi Kamar</h4>
+                                <h4 class="mb-1 mt-0">Info Mahasiswa</h4>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row room-select">
+                            <div class="offset-lg-2 col-lg-7">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <h5 class="mb-1 mt-0 text-welcome">Pilih Lantai</h5>
+                                            <span class="btn btn-success">Gedung: A</span>
+                                        </div>
+                                        <div class="floor-buttons">
+                                            <button class="floor-button active">Lantai 1</button>
+                                            <button class="floor-button">Lantai 2</button>
+                                            <button class="floor-button">Lantai 3</button>
+                                            <button class="floor-button">Lantai 4</button>
+                                        </div>
+                                        <div class="form-group">
+                                            <select class="custom-select" id="kamar">
+                                                <option value="" disabled selected>Pilih Kamar</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group text-right">
+                                            <button type="button" class="btn btn-danger show-room">Lihat</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row d-none room-info">
+                            <div class="offset-lg-2 col-lg-7 mb-4">
+                                <button class="btn btn-sm btn-warning back-to-select"><i class="fa fa-arrow-left mr-1"></i> Kembali</button>
+                            </div>
                             <div class="offset-lg-2 col-lg-7 mb-4">
                                 <div class="d-flex justify-content-between align-items-center mb-3">
                                     <span class="btn btn-danger">Daftar Teman Sekamar</span>
@@ -159,7 +193,7 @@
                             <div class="offset-lg-2 col-lg-7">
                                 <div class="d-flex justify-content-between align-items-center mb-3">
                                     <span class="btn btn-danger">Denah Kamar</span>
-                                    <span class="btn btn-success">Nomor Kamar: 101</span>
+                                    <span class="btn btn-success room-number">Nomor Kamar: </span>
                                 </div>
                                 <div class="card">
                                     <div class="card-body">
@@ -178,6 +212,56 @@
                         </div>
                     </div>
                 </div>
+                
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        const floorButtons = document.querySelectorAll('.floor-button');
+                        const kamarSelect = document.getElementById('kamar');
+                        const submitBtn = document.querySelector('.show-room');
+                        const roomDisplaySection = document.querySelector('.room-info');
+                        const roomSelectSection = document.querySelector('.room-select');
+                        const backButton = document.querySelector('.back-to-select');
+                        const rooms = {
+                            '1': ['101', '102', '103', '104', '105', '106', '107', '108'],
+                            '2': ['201', '202', '203', '204', '205', '206', '207', '208'],
+                            '3': ['301', '302', '303', '304', '305', '306', '307', '308'],
+                            '4': ['401', '402', '403', '404', '405', '406', '407', '408']
+                        };
+                        function updateRoomOptions(floor) {
+                            kamarSelect.innerHTML = '<option value="" disabled selected>Pilih Kamar</option>';
+                            rooms[floor].forEach(roomNumber => {
+                                const option = document.createElement('option');
+                                option.value = roomNumber;
+                                option.textContent = `Kamar ${roomNumber}`;
+                                kamarSelect.appendChild(option);
+                            });
+                        }
+                        floorButtons.forEach(button => {
+                            button.addEventListener('click', () => {
+                                floorButtons.forEach(btn => btn.classList.remove('active'));
+                                button.classList.add('active');
+                                const floorNumber = button.textContent.split(' ')[1];
+                                updateRoomOptions(floorNumber);
+                            });
+                        });
+                        submitBtn.addEventListener('click', () => {
+                            const selectedRoom = kamarSelect.value;
+                            if (selectedRoom) {
+                                roomSelectSection.classList.add('d-none');
+                                roomDisplaySection.classList.remove('d-none');
+                                const roomNumberSpan = roomDisplaySection.querySelector('.room-number');
+                                roomNumberSpan.textContent = `Nomor Kamar: ${selectedRoom}`;
+                            } else {
+                                alert('Silakan pilih kamar terlebih dahulu!');
+                            }
+                        });
+                        backButton.addEventListener('click', () => {
+                            roomDisplaySection.classList.add('d-none');
+                            roomSelectSection.classList.remove('d-none');
+                        });
+                        updateRoomOptions('1');
+                    });
+                </script>
                 
                 <footer class="footer">
                     <div class="container-fluid">

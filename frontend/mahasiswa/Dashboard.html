@@ -5,10 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <!-- Title -->
-        <title>DormHub</title>
+        <title>DormHub - Beranda</title>
         
         <!-- App Favicon -->
-        <link rel="shortcut icon" href="../assets/images/logo_dormhub.svg">
+        <link rel="shortcut icon" href="../assets/images/favicon.ico">
         
         <!-- App CSS -->
         <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -20,13 +20,13 @@
         <div id="wrapper">
             <div class="navbar navbar-expand flex-column flex-md-row navbar-custom">
                 <div class="container-fluid">
-                    <a href="index.html" class="navbar-brand mr-0 mr-md-2 logo">
+                    <a href="" class="navbar-brand mr-0 mr-md-2 logo">
                         <span class="logo-lg">
-                            <img src="../assets/images/logo_dormhub.svg" alt="" height="24">
+                            <img src="../assets/images/logo.png" alt="" height="24">
                             <span class="d-inline h5 ml-1 text-logo">DormHub</span>
                         </span>
                         <span class="logo-sm">
-                            <img src="../assets/images/logo_dormhub.svg" alt="" height="24">
+                            <img src="../assets/images/logo.png" alt="" height="24">
                         </span>
                     </a>
                     <ul class="navbar-nav bd-navbar-nav flex-row list-unstyled menu-left mb-0">
@@ -36,6 +36,11 @@
                                 <i data-feather="x" class="close-icon"></i>
                             </button>
                         </li>
+                    </ul>
+                    <ul class="navbar-nav flex-row ml-auto d-flex list-unstyled topnav-menu float-right mb-0">
+                        <a href="../senior-residence/Dashboard.html" class="btn btn-sm btn-danger rounded">
+                            <i class="fa fa-arrow-right mr-1"></i> Senior Residence
+                        </a>
                     </ul>
                 </div>
             </div>
@@ -52,7 +57,7 @@
                             <span data-feather="chevron-down"></span>
                         </a>
                         <div class="dropdown-menu profile-dropdown">
-                            <a href="profil.html" class="dropdown-item notify-item">
+                            <a href="Profil.html" class="dropdown-item notify-item">
                                 <i data-feather="user" class="icon-dual icon-xs mr-2"></i>
                                 <span>Profil</span>
                             </a>
@@ -82,7 +87,7 @@
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li>
-                                        <a href="LaporanUmum.html">Buat Laporan</a>
+                                        <a href="BuatLaporanUmum.html">Buat Laporan</a>
                                     </li>
                                     <li>
                                         <a href="DaftarLaporanUmum.html">Daftar Laporan</a>
@@ -169,7 +174,7 @@
                                             </div>
                                             <div class="align-self-center ml-3">
                                                 <div class="d-flex justify-content-center align-items-center bg-danger rounded-circle text-white avatar-custom">
-                                                    <i class="fas fa-file-alt fa-1x"></i>
+                                                    <i class="fas fa-file-alt"></i>
                                                 </div>
                                             </div>
                                         </div>
@@ -186,7 +191,7 @@
                                             </div>
                                             <div class="align-self-center ml-3">
                                                 <div class="d-flex justify-content-center align-items-center bg-danger rounded-circle text-white avatar-custom">
-                                                    <i class="fas fa-file-alt fa-1x"></i>
+                                                    <i class="fas fa-file-alt"></i>
                                                 </div>
                                             </div>
                                         </div>
@@ -203,7 +208,7 @@
                                             </div>
                                             <div class="align-self-center ml-3">
                                                 <div class="d-flex justify-content-center align-items-center bg-danger rounded-circle text-white avatar-custom">
-                                                    <i class="fas fa-user-graduate fa-1x"></i>
+                                                    <i class="fas fa-users"></i>
                                                 </div>
                                             </div>
                                         </div>
@@ -215,7 +220,7 @@
                         <div class="row">
                             <div class="col-md-3 mb-3">
                                 <div class="goods h-100">
-                                    <img src="../assets/images/paket.svg" alt="Paket">
+                                    <img src="../assets/images/barang/paket.svg" alt="Paket">
                                     <div class="row align-items-center">
                                         <div class="col-6">
                                             <span class="goods-title">Paket</span>
@@ -225,11 +230,12 @@
                                         </div>
                                     </div>
                                     <p>Ambil segera paket anda sekarang juga di Petugas Help Desk kami Lantai 1</p>
+                                    <a href="" class="btn btn-light btn-block mt-3 mb-2">Sudah Diambil</a>
                                 </div>
                             </div>
                             <div class="col-md-3 mb-3">
                                 <div class="goods h-100">
-                                    <img src="../assets/images/makanan.svg" alt="Makanan">
+                                    <img src="../assets/images/barang/makanan.svg" alt="Makanan">
                                     <div class="row align-items-center">
                                         <div class="col-6">
                                             <span class="goods-title">Makanan</span>
@@ -239,6 +245,7 @@
                                         </div>
                                     </div>
                                     <p>Ambil segera makanan anda sekarang juga di Petugas Help Desk kami Lantai 1</p>
+                                    <a href="" class="btn btn-light btn-block mt-3 mb-2">Sudah Diambil</a>
                                 </div>
                             </div>
                         </div>

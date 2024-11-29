@@ -5,10 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <!-- Title -->
-        <title>DormHub</title>
+        <title>DormHub - Buat Laporan</title>
         
         <!-- App Favicon -->
-        <link rel="shortcut icon" href="../assets/images/logo_dormhub.svg">
+        <link rel="shortcut icon" href="../assets/images/favicon.ico">
         
         <!-- App CSS -->
         <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -20,13 +20,13 @@
         <div id="wrapper">
             <div class="navbar navbar-expand flex-column flex-md-row navbar-custom">
                 <div class="container-fluid">
-                    <a href="index.html" class="navbar-brand mr-0 mr-md-2 logo">
+                    <a href="" class="navbar-brand mr-0 mr-md-2 logo">
                         <span class="logo-lg">
-                            <img src="../assets/images/logo_dormhub.svg" alt="" height="24">
+                            <img src="../assets/images/logo.png" alt="" height="24">
                             <span class="d-inline h5 ml-1 text-logo">DormHub</span>
                         </span>
                         <span class="logo-sm">
-                            <img src="../assets/images/logo_dormhub.svg" alt="" height="24">
+                            <img src="../assets/images/logo.png" alt="" height="24">
                         </span>
                     </a>
                     <ul class="navbar-nav bd-navbar-nav flex-row list-unstyled menu-left mb-0">
@@ -45,14 +45,14 @@
                     <img src="../assets/images/users/avatar-1.jpg" class="avatar-xs rounded-circle mr-2" alt="Profil">
                     <div class="media-body">
                         <h6 class="pro-user-name mt-0 mb-0">John Doe</h6>
-                        <span class="pro-user-desc font-weight-600">Help desk</span>
+                        <span class="pro-user-desc font-weight-600">Mahasiswa</span>
                     </div>
                     <div class="dropdown align-self-center profile-dropdown-menu">
                         <a class="dropdown-toggle mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                             <span data-feather="chevron-down"></span>
                         </a>
                         <div class="dropdown-menu profile-dropdown">
-                            <a href="profil.html" class="dropdown-item notify-item">
+                            <a href="Profil.html" class="dropdown-item notify-item">
                                 <i data-feather="user" class="icon-dual icon-xs mr-2"></i>
                                 <span>Profil</span>
                             </a>
@@ -69,15 +69,30 @@
                         <ul class="metismenu" id="menu-bar">
                             <li class="menu-title">Menu</li>
                             <li>
-                                <a href="DashboardHelpDesk.html">
+                                <a href="Dashboard.html">
                                     <i class="fa fa-home"></i>
                                     <span>Beranda</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="LaporanBarang.html">
-                                    <i class="fa fa-box"></i>
-                                    <span>Laporan Barang</span>
+                                <a href="javascript: void(0);">
+                                    <i class="fa fa-file"></i>
+                                    <span>Laporan</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li>
+                                        <a href="BuatLaporanUmum.html">Buat Laporan</a>
+                                    </li>
+                                    <li>
+                                        <a href="DaftarLaporanUmum.html">Daftar Laporan</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="InformasiKamar.html">
+                                    <i class="fa fa-bed"></i>
+                                    <span>Informasi Kamar</span>
                                 </a>
                             </li>
                         </ul>
@@ -91,7 +106,7 @@
                     <div class="container-fluid">
                         <div class="row page-title">
                             <div class="col-md-12">
-                                <h4 class="mb-1 mt-0">Edit Profil</h4>
+                                <h4 class="mb-1 mt-0">Buat Laporan</h4>
                             </div>
                         </div>
                         <div class="row">
@@ -100,36 +115,28 @@
                                     <div class="card-body">
                                         <form method="POST">
                                             <div class="form-group">
-                                                <label>Foto Profil</label>
+                                                <label>Kategori Laporan</label>
+                                                <select class="form-control custom-select" name="category">
+                                                    <option disabled selected>Pilih Salah Satu</option>
+                                                    <option value="Izin">Izin</option>
+                                                    <option value="Keluhan">Keluhan</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Keterangan</label>
+                                                <textarea class="form-control" name="information" placeholder="Berikan alasan atau keluhan" rows="4"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Bukti (Opsional)</label>
                                                 <div class="d-flex">
                                                     <label id="custom" for="image"><i class="fa-regular fa-images"></i><small>Upload</small></label>
                                                     <input type="file" name="image" id="image" hidden>
                                                     <div id="list-images"></div>
                                                 </div>
                                             </div>
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">Nama Lengkap</label>
-                                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                              </div>
-                                              <div class="form-group">
-                                                <label for="exampleInputEmail1">Nomor HP</label>
-                                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                              </div>
-                                              <div class="form-group">
-                                                <label for="exampleInputEmail1">Jenis Kelamin</label>
-                                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                              </div>
-                                              <div class="form-group">
-                                                <label for="exampleInputEmail1">Email</label>
-                                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                              </div>
-                                              <div class="form-group">
-                                                <label for="exampleInputEmail1">Password</label>
-                                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                              </div>
                                             <div class="form-group text-right">
                                                 <button type="reset" class="btn btn-light">Ulangi</button>
-                                                <button type="submit" class="btn btn-danger">Simpan</button>
+                                                <button type="submit" class="btn btn-danger">Buat Laporan</button>
                                             </div>
                                         </form>
                                     </div>

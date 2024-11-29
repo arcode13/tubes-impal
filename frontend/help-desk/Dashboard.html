@@ -5,28 +5,37 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <!-- Title -->
-        <title>DormHub</title>
+        <title>DormHub - Beranda</title>
         
         <!-- App Favicon -->
-        <link rel="shortcut icon" href="../assets/images/logo_dormhub.svg">
+        <link rel="shortcut icon" href="../assets/images/favicon.ico">
         
         <!-- App CSS -->
         <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" />
         <link href="../assets/css/style.css" rel="stylesheet" type="text/css" />
+        
+        <!-- DataTable CSS -->
+        <link href="../assets/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        
+        <!-- SweetAlert2 -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        
+        <!-- jQuery -->
+        <script src="../assets/js/jquery-3.7.1.js"></script>
     </head>
     <body>
         <div id="wrapper">
             <div class="navbar navbar-expand flex-column flex-md-row navbar-custom">
                 <div class="container-fluid">
-                    <a href="index.html" class="navbar-brand mr-0 mr-md-2 logo">
+                    <a href="" class="navbar-brand mr-0 mr-md-2 logo">
                         <span class="logo-lg">
-                            <img src="../assets/images/logo_dormhub.svg" alt="" height="24">
+                            <img src="../assets/images/logo.png" alt="" height="24">
                             <span class="d-inline h5 ml-1 text-logo">DormHub</span>
                         </span>
                         <span class="logo-sm">
-                            <img src="../assets/images/logo_dormhub.svg" alt="" height="24">
+                            <img src="../assets/images/logo.png" alt="" height="24">
                         </span>
                     </a>
                     <ul class="navbar-nav bd-navbar-nav flex-row list-unstyled menu-left mb-0">
@@ -45,14 +54,14 @@
                     <img src="../assets/images/users/avatar-1.jpg" class="avatar-xs rounded-circle mr-2" alt="Profil">
                     <div class="media-body">
                         <h6 class="pro-user-name mt-0 mb-0">John Doe</h6>
-                        <span class="pro-user-desc font-weight-600">Mahasiswa</span>
+                        <span class="pro-user-desc font-weight-600">Help Desk</span>
                     </div>
                     <div class="dropdown align-self-center profile-dropdown-menu">
                         <a class="dropdown-toggle mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                             <span data-feather="chevron-down"></span>
                         </a>
                         <div class="dropdown-menu profile-dropdown">
-                            <a href="profil.html" class="dropdown-item notify-item">
+                            <a href="Profil.html" class="dropdown-item notify-item">
                                 <i data-feather="user" class="icon-dual icon-xs mr-2"></i>
                                 <span>Profil</span>
                             </a>
@@ -75,24 +84,9 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript: void(0);">
+                                <a href="DaftarLaporanUmum.html">
                                     <i class="fa fa-file"></i>
-                                    <span>Laporan</span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li>
-                                        <a href="LaporanUmum.html">Buat Laporan</a>
-                                    </li>
-                                    <li>
-                                        <a href="DaftarLaporanUmum.html">Daftar Laporan</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="InformasiKamar.html">
-                                    <i class="fa fa-bed"></i>
-                                    <span>Informasi Kamar</span>
+                                    <span>Daftar Laporan</span>
                                 </a>
                             </li>
                         </ul>
@@ -106,31 +100,36 @@
                     <div class="container-fluid">
                         <div class="row page-title">
                             <div class="col-md-12">
-                                <h4 class="mb-1 mt-0">Buat Laporan</h4>
+                                <h4 class="mb-1 mt-0 text-welcome">Hallo Help Desk, Selamat Pagi 👋</h4>
                             </div>
                         </div>
+                        
                         <div class="row">
-                            <div class="offset-lg-2 col-lg-7">
+                            <div class="col-xl-5">
                                 <div class="card">
                                     <div class="card-body">
+                                        <h5 class="mb-4 mt-0 text-danger">Laporan Barang</h5>
                                         <form method="POST">
                                             <div class="form-group">
-                                                <label>Kategori Laporan</label>
-                                                <select class="form-control custom-select" name="category">
-                                                    <option disabled selected>Pilih Salah Satu</option>
-                                                    <option value="Izin">Izin</option>
-                                                    <option value="Keluhan">Keluhan</option>
-                                                </select>
+                                                <label>Mahasiswa</label>
+                                                <input type="text" class="form-control" name="mahasiswa" id="cariMahasiswa" placeholder="Cari nama mahasiswa" required>
                                             </div>
                                             <div class="form-group">
-                                                <label>Keterangan</label>
-                                                <textarea class="form-control" name="information" placeholder="Berikan alasan atau keluhan" rows="4"></textarea>
+                                                <label>Jenis Barang</label>
+                                                <div class="custom-control custom-radio mb-2">
+                                                    <input type="radio" class="custom-control-input" name="jenis_barang" value="Paket" id="paket" required>
+                                                    <label class="custom-control-label" for="paket">Paket</label>
+                                                </div>
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" class="custom-control-input" name="jenis_barang" value="Makanan" id="makanan" required>
+                                                    <label class="custom-control-label" for="makanan">Makanan</label>
+                                                </div>
                                             </div>
                                             <div class="form-group">
-                                                <label>Bukti (Opsional)</label>
+                                                <label>Foto/Bukti</label>
                                                 <div class="d-flex">
                                                     <label id="custom" for="image"><i class="fa-regular fa-images"></i><small>Upload</small></label>
-                                                    <input type="file" name="image" id="image" hidden>
+                                                    <input type="file" name="image" id="image" hidden required>
                                                     <div id="list-images"></div>
                                                 </div>
                                             </div>
@@ -139,6 +138,44 @@
                                                 <button type="submit" class="btn btn-danger">Buat Laporan</button>
                                             </div>
                                         </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-7">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered table-striped" id="table">
+                                                <thead>
+                                                    <tr class="text-center">
+                                                        <th>No.</th>
+                                                        <th>Mahasiswa</th>
+                                                        <th>Jenis Barang</th>
+                                                        <th>Foto/Bukti</th>
+                                                        <th>Status</th>
+                                                        <th>Tanggal - Waktu</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="text-center">
+                                                        <td>1</td>
+                                                        <td>John Doe</td>
+                                                        <td>Makanan</td>
+                                                        <td><img src="../assets/images/barang/makanan.svg" alt="Foto/Bukti" class="rounded" width="150"></td>
+                                                        <td><span class="btn btn-sm btn-warning">Menunggu</span></td>
+                                                        <td>25 Oktober 2024 - 00:00:32</td>
+                                                    </tr>
+                                                    <tr class="text-center">
+                                                        <td>2</td>
+                                                        <td>John Doe</td>
+                                                        <td>Paket</td>
+                                                        <td><img src="../assets/images/barang/paket.svg" alt="Foto/Bukti" class="rounded" width="150"></td>
+                                                        <td><span class="btn btn-sm btn-success">Diterima</span></td>
+                                                        <td>25 Oktober 2024 - 12:33:26</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -172,11 +209,16 @@
                             if (e.target.id === 'remove-list') {
                                 const elemData = e.target.dataset.img;
                                 if (elemData) {
-                                    if (confirm("Hapus Bukti?")) {
+                                    if (confirm("Hapus Foto/Bukti?")) {
                                         listimage.removeChild(e.target.parentElement);
                                     }
                                 }
                             }
+                        });
+                    });
+                    $(document).ready(function () {
+                        $('#table').DataTable({
+                            "order": [[0, "asc"]]
                         });
                     });
                 </script>
@@ -195,6 +237,10 @@
         
         <!-- Vendor JS -->
         <script src="../assets/js/vendor.min.js"></script>
+        
+        <!-- DataTable JS -->
+        <script src="../assets/js/jquery.dataTables.min.js"></script>
+        <script src="../assets/js/dataTables.bootstrap4.min.js"></script>
         
         <!-- App JS -->
         <script src="../assets/js/app.min.js"></script>
