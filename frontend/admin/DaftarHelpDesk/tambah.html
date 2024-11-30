@@ -37,11 +37,6 @@
                             </button>
                         </li>
                     </ul>
-                    <ul class="navbar-nav flex-row ml-auto d-flex list-unstyled topnav-menu float-right mb-0">
-                        <a href="../../mahasiswa/Dashboard.html" class="btn btn-sm btn-danger rounded">
-                            <i class="fa fa-arrow-left mr-1"></i> Kembali
-                        </a>
-                    </ul>
                 </div>
             </div>
             <div class="left-side-menu">
@@ -50,7 +45,7 @@
                     <img src="../../assets/images/users/avatar-1.jpg" class="avatar-xs rounded-circle mr-2" alt="Profil">
                     <div class="media-body">
                         <h6 class="pro-user-name mt-0 mb-0">John Doe</h6>
-                        <span class="pro-user-desc font-weight-600">Senior Residence</span>
+                        <span class="pro-user-desc font-weight-600">Admin</span>
                     </div>
                     <div class="dropdown align-self-center profile-dropdown-menu">
                         <a class="dropdown-toggle mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
@@ -82,23 +77,20 @@
                             <li>
                                 <a href="javascript: void(0);">
                                     <i class="fa fa-users"></i>
-                                    <span>Pengguna</span>
+                                    <span>Info Pengguna</span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li>
-                                        <a href="../DaftarPenggunaMahasiswa">Mahasiswa</a>
+                                        <a href="index.html">Mahasiswa</a>
                                     </li>
                                     <li>
-                                        <a href="../DaftarPenggunaHelpDesk">Help Desk</a>
+                                        <a href="../DaftarHelpDesk/index.html">Help Desk</a>
+                                    </li>
+                                    <li>
+                                        <a href="../DaftarSeniorResidence/index.html">Senior Residence</a>
                                     </li>
                                 </ul>
-                            </li>
-                            <li>
-                                <a href="../InfoMahasiswa.html">
-                                    <i class="fa fa-bed"></i>
-                                    <span>Info Mahasiswa</span>
-                                </a>
                             </li>
                         </ul>
                     </div>
@@ -111,12 +103,12 @@
                     <div class="container-fluid">
                         <div class="row page-title">
                             <div class="col-md-12">
-                                <h4 class="mb-1 mt-0">Edit Help Desk</h4>
+                                <h4 class="mb-1 mt-0">Tambah Help Desk</h4>
                             </div>
                         </div>
                         <div class="row">
                             <div class="offset-lg-2 col-lg-7">
-                                <a href="../DaftarPenggunaHelpDesk" class="btn btn-sm btn-warning back-to-select mb-3"><i class="fa fa-arrow-left mr-1"></i> Kembali</a>
+                                <a href="../DaftarHelpDesk/index.html" class="btn btn-sm btn-warning back-to-select mb-3"><i class="fa fa-arrow-left mr-1"></i> Kembali</a>
                                 <div class="card">
                                     <div class="card-body">
                                         <form method="POST">
@@ -151,9 +143,18 @@
                                                     <label class="custom-control-label" for="perempuan">Perempuan</label>
                                                 </div>
                                             </div>
+                                            <div class="form-group">
+                                                <label>Gedung</label>
+                                                <select class="custom-select" id="kamar">
+                                                    <option value="" disabled selected>Pilih Gedung</option>
+                                                    <option value="Gedung 1 (ciganitri)">Gedung 1 (ciganitri)</option>
+                                                    <option value="Gedung 2 (Vallerie Mansion)">Gedung 2 (Vallerie Mansion)</option>
+                                                    <option value="Gedung 3 (Kontakan arul)">Gedung 3 (Kontakan arul)</option>
+                                                </select>
+                                            </div>
                                             <div class="form-group text-right">
                                                 <button type="reset" class="btn btn-light">Ulangi</button>
-                                                <button type="submit" class="btn btn-danger">Edit</button>
+                                                <button type="submit" class="btn btn-danger">Tambah</button>
                                             </div>
                                         </form>
                                     </div>
