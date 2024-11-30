@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <!-- Title -->
-        <title>DormHub - Daftar Help Desk</title>
+        <title>DormHub - Daftar Admin</title>
         
         <!-- App Favicon -->
         <link rel="shortcut icon" href="../../assets/images/favicon.ico">
@@ -86,18 +86,21 @@
                             <li>
                                 <a href="javascript: void(0);">
                                     <i class="fa fa-users"></i>
-                                    <span>Info Pengguna</span>
+                                    <span>Pengguna</span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li>
-                                        <a href="../DaftarMahasiswa/index.html">Mahasiswa</a>
+                                        <a href="../Mahasiswa">Mahasiswa</a>
                                     </li>
                                     <li>
-                                        <a href="../DaftarHelpDesk/index.html">Help Desk</a>
+                                        <a href="../SeniorResidence">Senior Residence</a>
                                     </li>
                                     <li>
-                                        <a href="../DaftarSeniorResidence/index.html">Senior Residence</a>
+                                        <a href="../HelpDesk">Help Desk</a>
+                                    </li>
+                                    <li>
+                                        <a href="../Admin">Admin</a>
                                     </li>
                                 </ul>
                             </li>
@@ -112,14 +115,14 @@
                     <div class="container-fluid">
                         <div class="row page-title">
                             <div class="col-md-12">
-                                <h4 class="mb-1 mt-0">Daftar Help Desk</h4>
+                                <h4 class="mb-1 mt-0">Daftar Admin</h4>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <a href="tambah.html" class="btn btn-sm btn-danger float-right mb-3">Tambah</a> 
+                                        <a href="tambah.html" class="btn btn-sm btn-success float-right mb-3">Tambah</a> 
                                         <div class="table-responsive">
                                             <table class="table table-bordered table-striped" id="table">
                                                 <thead>
@@ -130,8 +133,6 @@
                                                         <th>Email</th>
                                                         <th>Nomor HP</th>
                                                         <th>Jenis Kelamin</th>
-                                                        <th>Gedung</th>
-                                                        <th>Status</th>
                                                         <th>Aksi</th>
                                                     </tr>
                                                 </thead>
@@ -143,42 +144,8 @@
                                                         <td>johndoe@example.com</td>
                                                         <td>081234567890</td>
                                                         <td>Laki-Laki</td>
-                                                        <td>Gedung 2 (Larat)</td>
-                                                        <td align="center">
-                                                            <div class="btn-group">
-                                                                <button type="button" class="btn btn-sm btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Klik Untuk Mengubah">Aktif <i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="Pengguna/status/1/aktif">Aktif</a>
-                                                                    <a class="dropdown-item" href="Pengguna/status/1/tidakaktif">Tidak Aktif</a>
-                                                            	</div>
-                                                            </div>
-                                                        </td>
                                                         <td align="center">
                                                             <a href="edit.html" class="btn btn-sm btn-warning" data-toggle="tooltip" data-placement="bottom" title="Edit" data-original-title="Edit"><i class="fa fa-edit"></i></a>
-                                                            <a href="detail.html" class="btn btn-sm btn-info" data-toggle="tooltip" data-placement="bottom" title="Detail" data-original-title="Detail"><i class="fa fa-eye"></i></a>
-                                                            <a href="javascript:;" onclick="confirm_delete('')" class="btn btn-sm btn-danger" data-toggle="tooltip" data-placement="bottom" title="Hapus" data-original-title="Hapus"><i class="fa fa-trash"></i></a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="text-center">
-                                                        <td>1</td>
-                                                        <td><img src="../../assets/images/pengguna/" alt="Foto Profil" class="rounded" width="100"></td>
-                                                        <td>Jasmine Maxwell</td>
-                                                        <td>jasminemaxwell@example.com</td>
-                                                        <td>081234567890</td>
-                                                        <td>Perempuan</td>
-                                                        <td>Gedung 2 (Larat)</td>
-                                                        <td align="center">
-                                                            <div class="btn-group">
-                                                                <button type="button" class="btn btn-sm btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Klik Untuk Mengubah">Tidak Aktif <i class="icon"><span data-feather="chevron-down"></span></i></button>
-                                                                <div class="dropdown-menu">
-                                                                    <a class="dropdown-item" href="Pengguna/status/1/aktif">Aktif</a>
-                                                                    <a class="dropdown-item" href="Pengguna/status/1/tidakaktif">Tidak Aktif</a>
-                                                            	</div>
-                                                            </div>
-                                                        </td>
-                                                        <td align="center">
-                                                            <a href="edit.html" class="btn btn-sm btn-warning" data-toggle="tooltip" data-placement="bottom" title="Edit" data-original-title="Edit"><i class="fa fa-edit"></i></a>
-                                                            <a href="detail.html" class="btn btn-sm btn-info" data-toggle="tooltip" data-placement="bottom" title="Detail" data-original-title="Detail"><i class="fa fa-eye"></i></a>
                                                             <a href="javascript:;" onclick="confirm_delete('')" class="btn btn-sm btn-danger" data-toggle="tooltip" data-placement="bottom" title="Hapus" data-original-title="Hapus"><i class="fa fa-trash"></i></a>
                                                         </td>
                                                     </tr>
@@ -196,7 +163,7 @@
                 	<div class="modal-dialog modal-dialog-centered modal-sm">
                 		<div class="modal-content">
                 			<div class="modal-header">
-                				<h5 class="modal-title">Hapus Help Desk</h5>
+                				<h5 class="modal-title">Hapus Admin</h5>
                     			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     			    <span aria-hidden="true">&times;</span>
                     			</button>

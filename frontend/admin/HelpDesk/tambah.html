@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <!-- Title -->
-        <title>DormHub - Edit Mahasiswa</title>
+        <title>DormHub - Tambah Help Desk</title>
         
         <!-- App Favicon -->
         <link rel="shortcut icon" href="../../assets/images/favicon.ico">
@@ -37,11 +37,6 @@
                             </button>
                         </li>
                     </ul>
-                    <ul class="navbar-nav flex-row ml-auto d-flex list-unstyled topnav-menu float-right mb-0">
-                        <a href="../../mahasiswa/Dashboard.html" class="btn btn-sm btn-danger rounded">
-                            <i class="fa fa-arrow-left mr-1"></i> Kembali
-                        </a>
-                    </ul>
                 </div>
             </div>
             <div class="left-side-menu">
@@ -50,7 +45,7 @@
                     <img src="../../assets/images/users/avatar-1.jpg" class="avatar-xs rounded-circle mr-2" alt="Profil">
                     <div class="media-body">
                         <h6 class="pro-user-name mt-0 mb-0">John Doe</h6>
-                        <span class="pro-user-desc font-weight-600">Senior Residence</span>
+                        <span class="pro-user-desc font-weight-600">Admin</span>
                     </div>
                     <div class="dropdown align-self-center profile-dropdown-menu">
                         <a class="dropdown-toggle mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
@@ -87,18 +82,18 @@
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li>
-                                        <a href="../DaftarPenggunaMahasiswa">Mahasiswa</a>
+                                        <a href="../Mahasiswa">Mahasiswa</a>
                                     </li>
                                     <li>
-                                        <a href="../DaftarPenggunaHelpDesk">Help Desk</a>
+                                        <a href="../SeniorResidence">Senior Residence</a>
+                                    </li>
+                                    <li>
+                                        <a href="../HelpDesk">Help Desk</a>
+                                    </li>
+                                    <li>
+                                        <a href="../Admin">Admin</a>
                                     </li>
                                 </ul>
-                            </li>
-                            <li>
-                                <a href="../InfoMahasiswa.html">
-                                    <i class="fa fa-bed"></i>
-                                    <span>Info Mahasiswa</span>
-                                </a>
                             </li>
                         </ul>
                     </div>
@@ -111,12 +106,12 @@
                     <div class="container-fluid">
                         <div class="row page-title">
                             <div class="col-md-12">
-                                <h4 class="mb-1 mt-0">Edit Mahasiswa</h4>
+                                <h4 class="mb-1 mt-0">Tambah Help Desk</h4>
                             </div>
                         </div>
                         <div class="row">
                             <div class="offset-lg-2 col-lg-7">
-                                <a href="../DaftarPenggunaMahasiswa" class="btn btn-sm btn-warning back-to-select mb-3"><i class="fa fa-arrow-left mr-1"></i> Kembali</a>
+                                <a href="../HelpDesk" class="btn btn-sm btn-warning back-to-select mb-3"><i class="fa fa-arrow-left mr-1"></i> Kembali</a>
                                 <div class="card">
                                     <div class="card-body">
                                         <form method="POST">
@@ -141,6 +136,10 @@
                                                 <input type="number" class="form-control" name="nomor_hp" value="">
                                             </div>
                                             <div class="form-group">
+                                                <label>Password</label>
+                                                <input type="password" class="form-control" name="password" value="">
+                                            </div>
+                                            <div class="form-group">
                                                 <label>Jenis Kelamin</label>
                                                 <div class="custom-control custom-radio mb-2">
                                                     <input type="radio" class="custom-control-input" name="jenis_kelamin" value="Laki-Laki" id="lakilaki" checked>
@@ -153,7 +152,7 @@
                                             </div>
                                             <div class="form-group text-right">
                                                 <button type="reset" class="btn btn-light">Ulangi</button>
-                                                <button type="submit" class="btn btn-danger">Edit</button>
+                                                <button type="submit" class="btn btn-danger">Tambah</button>
                                             </div>
                                         </form>
                                     </div>

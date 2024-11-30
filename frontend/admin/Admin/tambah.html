@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <!-- Title -->
-        <title>DormHub - Edit Help Desk</title>
+        <title>DormHub - Tambah Admin</title>
         
         <!-- App Favicon -->
         <link rel="shortcut icon" href="../../assets/images/favicon.ico">
@@ -77,18 +77,21 @@
                             <li>
                                 <a href="javascript: void(0);">
                                     <i class="fa fa-users"></i>
-                                    <span>Info Pengguna</span>
+                                    <span>Pengguna</span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li>
-                                        <a href="index.html">Mahasiswa</a>
+                                        <a href="../Mahasiswa">Mahasiswa</a>
                                     </li>
                                     <li>
-                                        <a href="../DaftarHelpDesk/index.html">Help Desk</a>
+                                        <a href="../SeniorResidence">Senior Residence</a>
                                     </li>
                                     <li>
-                                        <a href="../DaftarSeniorResidence/index.html">Senior Residence</a>
+                                        <a href="../HelpDesk">Help Desk</a>
+                                    </li>
+                                    <li>
+                                        <a href="../Admin">Admin</a>
                                     </li>
                                 </ul>
                             </li>
@@ -103,12 +106,12 @@
                     <div class="container-fluid">
                         <div class="row page-title">
                             <div class="col-md-12">
-                                <h4 class="mb-1 mt-0">Edit Help Desk</h4>
+                                <h4 class="mb-1 mt-0">Tambah Admin</h4>
                             </div>
                         </div>
                         <div class="row">
                             <div class="offset-lg-2 col-lg-7">
-                                <a href="../DaftarHelpDesk/index.html" class="btn btn-sm btn-warning back-to-select mb-3"><i class="fa fa-arrow-left mr-1"></i> Kembali</a>
+                                <a href="../Admin" class="btn btn-sm btn-warning back-to-select mb-3"><i class="fa fa-arrow-left mr-1"></i> Kembali</a>
                                 <div class="card">
                                     <div class="card-body">
                                         <form method="POST">
@@ -133,6 +136,10 @@
                                                 <input type="number" class="form-control" name="nomor_hp" value="">
                                             </div>
                                             <div class="form-group">
+                                                <label>Password</label>
+                                                <input type="password" class="form-control" name="password" value="">
+                                            </div>
+                                            <div class="form-group">
                                                 <label>Jenis Kelamin</label>
                                                 <div class="custom-control custom-radio mb-2">
                                                     <input type="radio" class="custom-control-input" name="jenis_kelamin" value="Laki-Laki" id="lakilaki" checked>
@@ -143,18 +150,9 @@
                                                     <label class="custom-control-label" for="perempuan">Perempuan</label>
                                                 </div>
                                             </div>
-                                            <div class="form-group">
-                                                <label>Gedung</label>
-                                                <select class="custom-select" id="kamar">
-                                                    <option value="" disabled selected>Pilih Gedung</option>
-                                                    <option value="Gedung 1 (ciganitri)">Gedung 1 (ciganitri)</option>
-                                                    <option value="Gedung 2 (Vallerie Mansion)">Gedung 2 (Vallerie Mansion)</option>
-                                                    <option value="Gedung 3 (Kontakan arul)">Gedung 3 (Kontakan arul)</option>
-                                                </select>
-                                            </div>
                                             <div class="form-group text-right">
                                                 <button type="reset" class="btn btn-light">Ulangi</button>
-                                                <button type="submit" class="btn btn-danger">Edit</button>
+                                                <button type="submit" class="btn btn-danger">Tambah</button>
                                             </div>
                                         </form>
                                     </div>

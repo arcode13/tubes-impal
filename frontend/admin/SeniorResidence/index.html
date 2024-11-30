@@ -5,16 +5,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <!-- Title -->
-        <title>DormHub - Edit Help Desk</title>
+        <title>DormHub - Daftar Senior Residence</title>
         
         <!-- App Favicon -->
-        <link rel="shortcut icon" href="../assets/images/favicon.ico">
+        <link rel="shortcut icon" href="../../assets/images/favicon.ico">
         
         <!-- App CSS -->
         <link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="../../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <link href="../../assets/css/app.min.css" rel="stylesheet" type="text/css" />
         <link href="../../assets/css/style.css" rel="stylesheet" type="text/css" />
+        
+        <!-- DataTable CSS -->
+        <link href="../../assets/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        
+        <!-- jQuery -->
+        <script src="../../assets/js/jquery-3.7.1.js"></script>
     </head>
     <body>
         <div id="wrapper">
@@ -77,18 +83,21 @@
                             <li>
                                 <a href="javascript: void(0);">
                                     <i class="fa fa-users"></i>
-                                    <span>Info Pengguna</span>
+                                    <span>Pengguna</span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li>
-                                        <a href="index.html">Mahasiswa</a>
+                                        <a href="../Mahasiswa">Mahasiswa</a>
                                     </li>
                                     <li>
-                                        <a href="../DaftarHelpDesk/index.html">Help Desk</a>
+                                        <a href="../SeniorResidence">Senior Residence</a>
                                     </li>
                                     <li>
-                                        <a href="../DaftarSeniorResidence/index.html">Senior Residence</a>
+                                        <a href="../HelpDesk">Help Desk</a>
+                                    </li>
+                                    <li>
+                                        <a href="../Admin">Admin</a>
                                     </li>
                                 </ul>
                             </li>
@@ -103,28 +112,52 @@
                     <div class="container-fluid">
                         <div class="row page-title">
                             <div class="col-md-12">
-                                <h4 class="mb-1 mt-0">Edit Gedung</h4>
+                                <h4 class="mb-1 mt-0">Daftar Senior Residence</h4>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="offset-lg-2 col-lg-7">
-                                <a href="../Dashboard.html" class="btn btn-sm btn-warning back-to-select mb-3"><i class="fa fa-arrow-left mr-1"></i> Kembali</a>
+                            <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <form method="POST">
-                                            <div class="form-group">
-                                                <label>No Gedung</label>
-                                                <input type="text" class="form-control" name="nama_lengkap" value="">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Nama Gedung</label>
-                                                <input type="email" class="form-control" name="email" value="">
-                                            </div>
-                                            <div class="form-group text-right">
-                                                <button type="reset" class="btn btn-light">Ulangi</button>
-                                                <button type="submit" class="btn btn-danger">Edit</button>
-                                            </div>
-                                        </form>
+                                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                            <b>Senior Residence</b> adalah bagian dari mahasiswa. Jika Anda menghapus status  <b>Senior Residence</b>, mahasiswa tersebut akan kehilangan status tersebut tetapi tetap terdaftar sebagai mahasiswa.
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered table-striped" id="table">
+                                                <thead>
+                                                    <tr class="text-center">
+                                                        <th>No.</th>
+                                                        <th>Nama Lengkap</th>
+                                                        <th>Email</th>
+                                                        <th>Nomor HP</th>
+                                                        <th>Aksi</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="text-center">
+                                                        <td>1</td>
+                                                        <td>John Doe</td>
+                                                        <td>johndoe@example.com</td>
+                                                        <td>081234567890</td>
+                                                        <td align="center">
+                                                            <a href="javascript:;" onclick="confirm_delete('')" class="btn btn-sm btn-danger" data-toggle="tooltip" data-placement="bottom" title="Hapus" data-original-title="Hapus"><i class="fa fa-trash"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="text-center">
+                                                        <td>2</td>
+                                                        <td>John Doe</td>
+                                                        <td>johndoe@example.com</td>
+                                                        <td>081234567890</td>
+                                                        <td align="center">
+                                                            <a href="javascript:;" onclick="confirm_delete('')" class="btn btn-sm btn-danger" data-toggle="tooltip" data-placement="bottom" title="Hapus" data-original-title="Hapus"><i class="fa fa-trash"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -132,37 +165,37 @@
                     </div>
                 </div>
                 
+                <div class="modal fade" id="modal-delete" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                	<div class="modal-dialog modal-dialog-centered modal-sm">
+                		<div class="modal-content">
+                			<div class="modal-header">
+                				<h5 class="modal-title">Hapus Senior Residence</h5>
+                    			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    			    <span aria-hidden="true">&times;</span>
+                    			</button>
+                			</div>
+                			<div class="modal-body">
+                			    Apakah Anda yakin?
+                			</div>
+                			<div class="modal-footer">
+                				<button type="button" class="btn btn-light" data-dismiss="modal">Batal</button>
+                				<a href="#" class="btn btn-danger" id="btn-yes">Ya, Hapus</a>
+                			</div>
+                		</div>
+                	</div>
+                </div>
+                
+                <script type="text/javascript">
+                    function confirm_delete(url, title) {
+                    	$('#modal-delete #btn-yes').attr({'href' : url});
+                    	$('#modal-delete').modal("show");
+                    }
+                </script>
+                
                 <script>
-                    const imagesFile = document.getElementById('image');
-                    const listimage = document.getElementById('list-images');
-                    const removeList = document.querySelectorAll('#remove-list');
-                    document.addEventListener('DOMContentLoaded', function() {
-                        imagesFile.addEventListener('change', function(e) {
-                            e.preventDefault();
-                            const imageFiles = e.target.files;
-                            listimage.innerHTML = '';
-                            for (let index = 0; index < imageFiles.length; index++) {
-                                const reader = new FileReader();
-                                reader.readAsDataURL(imageFiles[index]);
-                                reader.addEventListener('load', () => {
-                                    const img = `
-                                    <div class="position-relative" data-item="${index + 1}" style="width: max-content;">
-                                        <img id="displayimg" class="rounded-2" src="${reader.result}" width="115" height="115" alt="" srcset="">
-                                        <span data-img="${index + 1}" id="remove-list" class="remove-list">X</span>
-                                    </div>`;
-                                    listimage.insertAdjacentHTML('beforeend', img);
-                                });
-                            }
-                        });
-                        listimage.addEventListener('click', function(e) {
-                            if (e.target.id === 'remove-list') {
-                                const elemData = e.target.dataset.img;
-                                if (elemData) {
-                                    if (confirm("Hapus Foto Profil?")) {
-                                        listimage.removeChild(e.target.parentElement);
-                                    }
-                                }
-                            }
+                    $(document).ready(function () {
+                        $('#table').DataTable({
+                            "order": [[0, "asc"]]
                         });
                     });
                 </script>
@@ -181,6 +214,10 @@
         
         <!-- Vendor JS -->
         <script src="../../assets/js/vendor.min.js"></script>
+        
+        <!-- DataTable JS -->
+        <script src="../../assets/js/jquery.dataTables.min.js"></script>
+        <script src="../../assets/js/dataTables.bootstrap4.min.js"></script>
         
         <!-- App JS -->
         <script src="../../assets/js/app.min.js"></script>

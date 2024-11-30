@@ -5,10 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <!-- Title -->
-        <title>DormHub - Edit Help Desk</title>
+        <title>DormHub - Detail Mahasiswa</title>
         
         <!-- App Favicon -->
-        <link rel="shortcut icon" href="../assets/images/favicon.ico">
+        <link rel="shortcut icon" href="../../assets/images/favicon.ico">
         
         <!-- App CSS -->
         <link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -52,7 +52,7 @@
                             <span data-feather="chevron-down"></span>
                         </a>
                         <div class="dropdown-menu profile-dropdown">
-                            <a href="../../Profil.html" class="dropdown-item notify-item">
+                            <a href="../Profil.html" class="dropdown-item notify-item">
                                 <i data-feather="user" class="icon-dual icon-xs mr-2"></i>
                                 <span>Profil</span>
                             </a>
@@ -77,18 +77,21 @@
                             <li>
                                 <a href="javascript: void(0);">
                                     <i class="fa fa-users"></i>
-                                    <span>Info Pengguna</span>
+                                    <span>Pengguna</span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li>
-                                        <a href="index.html">Mahasiswa</a>
+                                        <a href="../Mahasiswa">Mahasiswa</a>
                                     </li>
                                     <li>
-                                        <a href="../DaftarHelpDesk/index.html">Help Desk</a>
+                                        <a href="../SeniorResidence">Senior Residence</a>
                                     </li>
                                     <li>
-                                        <a href="../DaftarSeniorResidence/index.html">Senior Residence</a>
+                                        <a href="../HelpDesk">Help Desk</a>
+                                    </li>
+                                    <li>
+                                        <a href="../Admin">Admin</a>
                                     </li>
                                 </ul>
                             </li>
@@ -103,69 +106,81 @@
                     <div class="container-fluid">
                         <div class="row page-title">
                             <div class="col-md-12">
-                                <h4 class="mb-1 mt-0">Tambah Gedung</h4>
+                                <h4 class="mb-1 mt-0">Detail Mahasiswa</h4>
                             </div>
                         </div>
                         <div class="row">
+                            <div class="offset-lg-2 col-lg-7 mb-4">
+                                <a href="../Mahasiswa" class="btn btn-sm btn-warning back-to-select"><i class="fa fa-arrow-left mr-1"></i> Kembali</a>
+                            </div>
+                            <div class="offset-lg-2 col-lg-7 mb-4">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="btn btn-danger">Daftar Teman Sekamar</span>
+                                    <span class="btn btn-success">Gedung: A</span>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body p-0">
+                                        <table class="table table-bordered">
+                                            <thead class="thead-light">
+                                                <tr>
+                                                    <th>Nama</th>
+                                                    <th>Program Studi</th>
+                                                    <th>No. HP</th>
+                                                    <th>No. Kasur</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Kaila Fiorenza Gampo</td>
+                                                    <td>S1 Informatika</td>
+                                                    <td>08xxxxxxxxxx</td>
+                                                    <td>1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Kaila Fiorenza Gampo</td>
+                                                    <td>S1 Rekayasa Perangkat Lunak</td>
+                                                    <td>08xxxxxxxxxx</td>
+                                                    <td>2</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Kaila Fiorenza Gampo</td>
+                                                    <td>S1 Desain Komunikasi Visual</td>
+                                                    <td>08xxxxxxxxxx</td>
+                                                    <td>3</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Kaila Fiorenza Gampo</td>
+                                                    <td>S1 Ilmu Komunikasi</td>
+                                                    <td>08xxxxxxxxxx</td>
+                                                    <td>4</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="offset-lg-2 col-lg-7">
-                                <a href="../Dashboard.html" class="btn btn-sm btn-warning back-to-select mb-3"><i class="fa fa-arrow-left mr-1"></i> Kembali</a>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="btn btn-danger">Denah Kamar</span>
+                                    <span class="btn btn-success">Nomor Kamar: 101</span>
+                                </div>
                                 <div class="card">
                                     <div class="card-body">
-                                        <form method="POST">
-                                            <div class="form-group">
-                                                <label>No Gedung</label>
-                                                <input type="text" class="form-control" name="nama_lengkap" value="">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Nama Gedung</label>
-                                                <input type="email" class="form-control" name="email" value="">
-                                            </div>
-                                            <div class="form-group text-right">
-                                                <button type="reset" class="btn btn-light">Ulangi</button>
-                                                <button type="submit" class="btn btn-danger">Tambah</button>
-                                            </div>
-                                        </form>
+                                        <div class="room-layout">
+                                            <div class="bed">3</div>
+                                            <div class="room-table first-room-table">Meja</div>
+                                            <div class="bed">1</div>
+                                            <div class="door">Pintu Masuk</div>
+                                            <div class="bed bed-custom">4</div>
+                                            <div class="room-table last-room-table">Meja</div>
+                                            <div class="bed bed-custom">2</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <script>
-                    const imagesFile = document.getElementById('image');
-                    const listimage = document.getElementById('list-images');
-                    const removeList = document.querySelectorAll('#remove-list');
-                    document.addEventListener('DOMContentLoaded', function() {
-                        imagesFile.addEventListener('change', function(e) {
-                            e.preventDefault();
-                            const imageFiles = e.target.files;
-                            listimage.innerHTML = '';
-                            for (let index = 0; index < imageFiles.length; index++) {
-                                const reader = new FileReader();
-                                reader.readAsDataURL(imageFiles[index]);
-                                reader.addEventListener('load', () => {
-                                    const img = `
-                                    <div class="position-relative" data-item="${index + 1}" style="width: max-content;">
-                                        <img id="displayimg" class="rounded-2" src="${reader.result}" width="115" height="115" alt="" srcset="">
-                                        <span data-img="${index + 1}" id="remove-list" class="remove-list">X</span>
-                                    </div>`;
-                                    listimage.insertAdjacentHTML('beforeend', img);
-                                });
-                            }
-                        });
-                        listimage.addEventListener('click', function(e) {
-                            if (e.target.id === 'remove-list') {
-                                const elemData = e.target.dataset.img;
-                                if (elemData) {
-                                    if (confirm("Hapus Foto Profil?")) {
-                                        listimage.removeChild(e.target.parentElement);
-                                    }
-                                }
-                            }
-                        });
-                    });
-                </script>
                 
                 <footer class="footer">
                     <div class="container-fluid">
