@@ -8,4 +8,3 @@ Anggota:
 3. Kaila Fiorenza Gampo
 4. Tegar Aqil Gunawan
 5. Dennis Rizky Syahputra
-6. Jevon Sebastian
