@@ -8,6 +8,6 @@ public class HelpDeskController {
 
     @GetMapping("/help-desk/dashboard")
     public String helpDeskDashboard() {
-        return "help-desk/dashboard"; // File HTML untuk dashboard help-desk
+        return "help-desk/dashboard"; // File HTML untuk dashboard help desk
     }
 }

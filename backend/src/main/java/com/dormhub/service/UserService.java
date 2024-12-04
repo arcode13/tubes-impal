@@ -9,12 +9,16 @@ import com.dormhub.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Service
 public class UserService {
+
+    private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 
     @Autowired
     private UserRepository userRepository;
@@ -25,12 +29,14 @@ public class UserService {
     @Autowired
     private RoomService roomService; // Tambahan RoomService untuk logika lantai, kamar, dan kasur
 
-    private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder; // Memanfaatkan dependency injection untuk BCryptPasswordEncoder
 
     /**
      * Mendaftarkan pengguna baru
      *
      * @param user Data user dari form pendaftaran
+     * @param jurusan Jurusan yang dipilih oleh pengguna
      * @return Pesan sukses atau error
      */
     public String registerUser(User user, Jurusan jurusan) {
@@ -38,26 +44,32 @@ public class UserService {
         if (userRepository.existsByEmail(user.getEmail())) {
             return "Email sudah terdaftar";
         }
-    
+
         try {
             // Set waktu saat ini
             LocalDateTime now = LocalDateTime.now();
-            
-            // Hash password
+
+            // Hash password menggunakan BCrypt
             user.setPassword(passwordEncoder.encode(user.getPassword()));
-    
-            // Atur level default untuk Mahasiswa
-            Level level = new Level();
-            level.setId(1); // ID untuk Mahasiswa
-            user.setLevel(level);
-            
-            // Atur waktu pembuatan dan pembaruan
+
+            // Set level untuk Mahasiswa (ambil dari DB jika perlu)
+            Optional<Level> levelOpt = Optional.ofNullable(user.getLevel());
+            if (levelOpt.isPresent()) {
+                // Set level default jika belum diatur
+                user.setLevel(levelOpt.get());
+            } else {
+                Level level = new Level();
+                level.setId(1L); // Ganti dengan level "Mahasiswa" sesuai ID yang ada di DB
+                user.setLevel(level);
+            }
+
+            // Set waktu pembuatan dan pembaruan
             user.setCreatedAt(now);
             user.setUpdatedAt(now);
-    
+
             // Simpan user ke database
             User savedUser = userRepository.save(user);
-    
+
             // Simpan data mahasiswa dengan jurusan
             Mahasiswa mahasiswa = new Mahasiswa();
             mahasiswa.setUserId(savedUser.getId());
@@ -65,13 +77,13 @@ public class UserService {
             mahasiswa.setNoKamar(roomService.assignRoom()[0]);
             mahasiswa.setNoKasur(roomService.assignRoom()[1]);
             mahasiswaRepository.save(mahasiswa);
-    
+
             return "Berhasil mendaftar";
         } catch (Exception e) {
-            e.printStackTrace();
-            return "Terjadi kesalahan saat mendaftar";
+            logger.error("Terjadi kesalahan saat mendaftar user: ", e);
+            return "Terjadi kesalahan saat mendaftar: " + e.getMessage();
         }
-    }    
+    }
 
     /**
      * Autentikasi pengguna berdasarkan email dan password
@@ -84,15 +96,7 @@ public class UserService {
         // Cari user berdasarkan email
         Optional<User> userOptional = userRepository.findByEmail(email);
 
-        if (userOptional.isPresent()) {
-            User user = userOptional.get();
-
-            // Periksa apakah password cocok menggunakan BCrypt
-            if (passwordEncoder.matches(password, user.getPassword())) {
-                return user; // Return user jika password cocok
-            }
-        }
-
-        return null; // Return null jika tidak cocok
+        return userOptional.filter(user -> passwordEncoder.matches(password, user.getPassword()))
+                           .orElse(null); // Return null jika tidak ada user atau password tidak cocok
     }
 }

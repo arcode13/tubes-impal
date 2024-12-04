@@ -15,21 +15,35 @@ public class LoginController {
     @Autowired
     private UserService userService;
 
+    /**
+     * Menampilkan halaman login.
+     */
     @GetMapping("/login")
     public String loginPage() {
-        return "Login"; // File Login.html
+        return "login"; // Menampilkan halaman login.html
     }
 
+    /**
+     * Proses login pengguna dan pengalihan ke dashboard sesuai level.
+     *
+     * @param email    Email pengguna
+     * @param password Password pengguna
+     * @param model    Model untuk menambahkan atribut jika login gagal
+     * @return Tampilan yang sesuai (Login atau halaman dashboard)
+     */
     @PostMapping("/login")
     public String login(
             @RequestParam("email") String email,
             @RequestParam("password") String password,
             Model model) {
 
+        // Autentikasi user menggunakan service
         User user = userService.authenticate(email, password);
 
         if (user != null) {
-            String level = user.getLevel().getNama();
+            String level = user.getLevel().getNama(); // Ambil level pengguna
+            
+            // Pengecekan level user
             switch (level.toLowerCase()) {
                 case "mahasiswa":
                 case "senior residence": // Redirect ke dashboard mahasiswa
@@ -40,11 +54,11 @@ public class LoginController {
                     return "redirect:/help-desk/dashboard";
                 default:
                     model.addAttribute("error", "Level user tidak valid");
-                    return "Login";
+                    return "login"; // Menampilkan kembali halaman login jika level tidak valid
             }
         } else {
             model.addAttribute("error", "Email atau password salah");
-            return "Login";
+            return "login"; // Menampilkan kembali halaman login jika login gagal
         }
     }
 }
