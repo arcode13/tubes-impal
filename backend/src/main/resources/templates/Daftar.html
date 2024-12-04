@@ -26,7 +26,7 @@
                                 <div class="row">
                                     <div class="col-md-6 p-5">
                                         <div class="mx-auto mb-5">
-                                            <a href="index.html">
+                                            <a href="">
                                                 <img src="assets/images/logo.png" alt="" height="24" />
                                                 <h3 class="d-inline align-middle ml-1 text-logo">DormHub</h3>
                                             </a>
@@ -35,6 +35,9 @@
                                         <p class="text-muted mt-1 mb-4">Buat akunmu dan rasakan kemudahan <b>DormHub</b>.</p>
                                         <form method="POST" class="authentication-form">
                                             <div class="form-group">
+                                                <p class="text-danger" th:text="${error}"></p>
+                                            </div>
+                                            <div class="form-group">
                                                 <label class="form-control-label">Nama Lengkap</label>
                                                 <div class="input-group input-group-merge">
                                                     <div class="input-group-prepend">
@@ -42,7 +45,7 @@
                                                             <i class="icon-dual" data-feather="user"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" name="nama_lengkap">
+                                                    <input type="text" class="form-control" name="namaLengkap">
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -64,20 +67,37 @@
                                                             <i class="icon-dual" data-feather="phone"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="number" class="form-control" name="nomor_hp" placeholder="Contoh : 081234567890" value="" required>
+                                                    <input type="number" class="form-control" name="nomorHp" placeholder="Contoh : 081234567890" value="" required>
                                                 </div>
                                             </div>
-                                                <div class="form-group">
-                                                    <label>Jenis Kelamin</label>
-                                                    <div class="custom-control custom-radio mb-2">
-                                                        <input type="radio" class="custom-control-input" name="jenis_kelamin" value="Laki-Laki" id="lakilaki" required>
-                                                        <label class="custom-control-label" for="lakilaki">Laki-Laki</label>
+                                            <div class="form-group">
+                                                <label class="form-control-label">Jurusan</label>
+                                                <div class="input-group input-group-merge">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">
+                                                            <i class="icon-dual" data-feather="list"></i>
+                                                        </span>
                                                     </div>
-                                                    <div class="custom-control custom-radio">
-                                                        <input type="radio" class="custom-control-input" name="jenis_kelamin" value="Perempuan" id="perempuan" required>
-                                                        <label class="custom-control-label" for="perempuan">Perempuan</label>
-                                                    </div>
+                                                    <select class="form-control" name="jurusanId" required>
+                                                        <option value="" disabled selected>Pilih Jurusan</option>
+                                                        <!-- Looping jurusan dari backend -->
+                                                        <th:block th:each="jurusan : ${jurusanList}">
+                                                            <option th:value="${jurusan.id}" th:text="${jurusan.nama}"></option>
+                                                        </th:block>
+                                                    </select>
                                                 </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Jenis Kelamin</label>
+                                                <div class="custom-control custom-radio mb-2">
+                                                    <input type="radio" class="custom-control-input" name="jenisKelamin" value="Laki-Laki" id="lakilaki" required>
+                                                    <label class="custom-control-label" for="lakilaki">Laki-Laki</label>
+                                                </div>
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" class="custom-control-input" name="jenisKelamin" value="Perempuan" id="perempuan" required>
+                                                    <label class="custom-control-label" for="perempuan">Perempuan</label>
+                                                </div>
+                                            </div>
                                             <div class="form-group mt-4">
                                                 <label class="form-control-label">Password</label>
                                                 <div class="input-group input-group-merge">
@@ -108,7 +128,7 @@
                         </div>
                         <div class="row mt-3">
                             <div class="col-12 text-center">
-                                <p class="text-muted">Sudah punya akun? <a href="Login.html" class="text-danger font-weight-bold ml-1">Login</a></p>
+                                <p class="text-muted">Sudah punya akun? <a href="login" class="text-danger font-weight-bold ml-1">Login</a></p>
                             </div>
                         </div>
                     </div>

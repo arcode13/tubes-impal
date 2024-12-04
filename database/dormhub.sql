@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2024 at 05:46 PM
+-- Generation Time: Dec 04, 2024 at 08:22 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -62,14 +62,44 @@ INSERT INTO `helpdesk` (`id`, `user_id`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `jurusan`
+--
+
+CREATE TABLE `jurusan` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `jurusan`
+--
+
+INSERT INTO `jurusan` (`id`, `nama`) VALUES
+(1, 'Informatika'),
+(2, 'Teknik Elektro'),
+(3, 'Teknik Telekomunikasi'),
+(4, 'Sistem Informasi'),
+(5, 'Teknik Industri'),
+(6, 'Teknik Komputer'),
+(7, 'Desain Komunikasi Visual'),
+(8, 'Manajemen Bisnis Telekomunikasi Informatika (MBTI)'),
+(9, 'Teknik Informatika (International)'),
+(10, 'Akuntansi'),
+(11, 'Ilmu Komunikasi'),
+(12, 'Administrasi Bisnis'),
+(13, 'Teknik Fisika');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `konfigurasi`
 --
 
 CREATE TABLE `konfigurasi` (
   `id` int(11) NOT NULL,
   `favicon` varchar(255) NOT NULL,
-  `nama_website` varchar(100) NOT NULL,
-  `nama_gedung` varchar(50) NOT NULL,
+  `nama_website` varchar(255) DEFAULT NULL,
+  `nama_gedung` varchar(255) DEFAULT NULL,
   `logo` varchar(255) NOT NULL,
   `lantai` int(11) NOT NULL,
   `kamar` int(11) NOT NULL,
@@ -145,7 +175,7 @@ INSERT INTO `laporan_umum` (`id`, `helpdesk_id`, `mahasiswa_id`, `jenis`, `alasa
 
 CREATE TABLE `level` (
   `id` int(11) NOT NULL,
-  `nama` varchar(50) NOT NULL
+  `nama` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -167,30 +197,33 @@ INSERT INTO `level` (`id`, `nama`) VALUES
 CREATE TABLE `mahasiswa` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
+  `jurusan_id` int(11) NOT NULL,
   `no_kamar` int(11) NOT NULL,
-  `no_kasur` int(11) NOT NULL,
-  `jurusan` varchar(255) NOT NULL
+  `no_kasur` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `mahasiswa`
 --
 
-INSERT INTO `mahasiswa` (`id`, `user_id`, `no_kamar`, `no_kasur`, `jurusan`) VALUES
-(1, 9, 101, 1, 'Informatika'),
-(2, 10, 102, 2, 'Manajemen Bisnis'),
-(3, 11, 103, 3, 'Teknik Elektro'),
-(4, 12, 104, 4, 'Teknik Mesin'),
-(5, 13, 105, 1, 'Sistem Informasi'),
-(6, 14, 106, 2, 'Psikologi'),
-(7, 15, 107, 3, 'Ekonomi'),
-(8, 16, 108, 4, 'Ilmu Komputer'),
-(9, 17, 109, 1, 'Statistika'),
-(10, 18, 110, 2, 'Teknologi Informasi'),
-(11, 19, 111, 1, 'Teknik Lingkungan'),
-(12, 20, 112, 2, 'Arsitektur'),
-(13, 21, 113, 3, 'Teknik Sipil'),
-(14, 22, 114, 4, 'Farmasi');
+INSERT INTO `mahasiswa` (`id`, `user_id`, `jurusan_id`, `no_kamar`, `no_kasur`) VALUES
+(1, 9, 1, 101, 1),
+(2, 10, 2, 102, 2),
+(3, 11, 3, 103, 3),
+(4, 12, 5, 104, 4),
+(5, 13, 6, 105, 1),
+(6, 14, 7, 106, 2),
+(7, 15, 8, 107, 3),
+(8, 16, 9, 108, 4),
+(9, 17, 10, 109, 1),
+(10, 18, 11, 110, 2),
+(11, 19, 4, 111, 1),
+(12, 20, 12, 112, 2),
+(13, 21, 13, 113, 3),
+(14, 22, 13, 114, 4),
+(15, 43, 12, 114, 2),
+(16, 44, 10, 114, 3),
+(17, 45, 9, 114, 4);
 
 -- --------------------------------------------------------
 
@@ -225,56 +258,63 @@ CREATE TABLE `users` (
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `foto_profil` varchar(255) NOT NULL,
-  `nomor_hp` varchar(20) NOT NULL,
-  `jenis_kelamin` varchar(20) NOT NULL,
-  `level_id` int(11) NOT NULL
+  `nomor_hp` varchar(255) NOT NULL,
+  `jenis_kelamin` varchar(255) NOT NULL,
+  `level_id` int(11) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `nama_lengkap`, `email`, `password`, `foto_profil`, `nomor_hp`, `jenis_kelamin`, `level_id`) VALUES
-(1, 'Andi Nugraha', 'andi.nugraha@dormhub.web.id', 'password123', 'default.png', '08121234567', 'Laki-Laki', 3),
-(2, 'Rina Ayu', 'rina.ayu@dormhub.web.id', 'password123', 'default.png', '08121238976', 'Perempuan', 3),
-(3, 'Joko Santoso', 'joko.santoso@dormhub.web.id', 'password123', 'default.png', '08121234578', 'Laki-Laki', 3),
-(4, 'Rudi Wijaya', 'rudi.wijaya@dormhub.web.id', 'password123', 'default.png', '08127891234', 'Laki-Laki', 4),
-(5, 'Fajar Sidiq', 'fajar.sidiq@dormhub.web.id', 'password123', 'default.png', '08123456789', 'Laki-Laki', 2),
-(6, 'Gita Maharani', 'gita.maharani@dormhub.web.id', 'password123', 'default.png', '08123412345', 'Perempuan', 2),
-(7, 'Rangga Saputra', 'rangga.saputra@dormhub.web.id', 'password123', 'default.png', '08129876432', 'Laki-Laki', 2),
-(8, 'Sari Anggraini', 'sari.anggraini@dormhub.web.id', 'password123', 'default.png', '08123456721', 'Perempuan', 2),
-(9, 'Ani Kartika', 'ani.kartika@dormhub.web.id', 'password123', 'default.png', '08123456788', 'Perempuan', 1),
-(10, 'Budi Santoso', 'budi.santoso@dormhub.web.id', 'password123', 'default.png', '08123456789', 'Laki-Laki', 1),
-(11, 'Citra Laras', 'citra.laras@dormhub.web.id', 'password123', 'default.png', '08123456787', 'Perempuan', 1),
-(12, 'Doni Pratama', 'doni.pratama@dormhub.web.id', 'password123', 'default.png', '08123456786', 'Laki-Laki', 1),
-(13, 'Eka Wulandari', 'eka.wulandari@dormhub.web.id', 'password123', 'default.png', '08123456785', 'Perempuan', 1),
-(14, 'Faisal Hakim', 'faisal.hakim@dormhub.web.id', 'password123', 'default.png', '08123456784', 'Laki-Laki', 1),
-(15, 'Gina Melati', 'gina.melati@dormhub.web.id', 'password123', 'default.png', '08123456783', 'Perempuan', 1),
-(16, 'Hari Wijaya', 'hari.wijaya@dormhub.web.id', 'password123', 'default.png', '08123456782', 'Laki-Laki', 1),
-(17, 'Ika Rahma', 'ika.rahma@dormhub.web.id', 'password123', 'default.png', '08123456781', 'Perempuan', 1),
-(18, 'Joko Susanto', 'joko.susanto@dormhub.web.id', 'password123', 'default.png', '08123456780', 'Laki-Laki', 1),
-(19, 'Andi Nugraha', 'andi.nugraha@dormhub.web.id', 'password123', 'default.png', '08121234567', 'Laki-Laki', 3),
-(20, 'Rina Ayu', 'rina.ayu@dormhub.web.id', 'password123', 'default.png', '08121238976', 'Perempuan', 3),
-(21, 'Joko Santoso', 'joko.santoso@dormhub.web.id', 'password123', 'default.png', '08121234578', 'Laki-Laki', 3),
-(22, 'Rudi Wijaya', 'rudi.wijaya@dormhub.web.id', 'password123', 'default.png', '08127891234', 'Laki-Laki', 4),
-(23, 'Fajar Sidiq', 'fajar.sidiq@dormhub.web.id', 'password123', 'default.png', '08123456789', 'Laki-Laki', 2),
-(24, 'Gita Maharani', 'gita.maharani@dormhub.web.id', 'password123', 'default.png', '08123412345', 'Perempuan', 2),
-(25, 'Rangga Saputra', 'rangga.saputra@dormhub.web.id', 'password123', 'default.png', '08129876432', 'Laki-Laki', 2),
-(26, 'Sari Anggraini', 'sari.anggraini@dormhub.web.id', 'password123', 'default.png', '08123456721', 'Perempuan', 2),
-(27, 'Ani Kartika', 'ani.kartika@dormhub.web.id', 'password123', 'default.png', '08123456788', 'Perempuan', 1),
-(28, 'Budi Santoso', 'budi.santoso@dormhub.web.id', 'password123', 'default.png', '08123456789', 'Laki-Laki', 1),
-(29, 'Citra Laras', 'citra.laras@dormhub.web.id', 'password123', 'default.png', '08123456787', 'Perempuan', 1),
-(30, 'Doni Pratama', 'doni.pratama@dormhub.web.id', 'password123', 'default.png', '08123456786', 'Laki-Laki', 1),
-(31, 'Eka Wulandari', 'eka.wulandari@dormhub.web.id', 'password123', 'default.png', '08123456785', 'Perempuan', 1),
-(32, 'Faisal Hakim', 'faisal.hakim@dormhub.web.id', 'password123', 'default.png', '08123456784', 'Laki-Laki', 1),
-(33, 'Gina Melati', 'gina.melati@dormhub.web.id', 'password123', 'default.png', '08123456783', 'Perempuan', 1),
-(34, 'Hari Wijaya', 'hari.wijaya@dormhub.web.id', 'password123', 'default.png', '08123456782', 'Laki-Laki', 1),
-(35, 'Ika Rahma', 'ika.rahma@dormhub.web.id', 'password123', 'default.png', '08123456781', 'Perempuan', 1),
-(36, 'Joko Susanto', 'joko.susanto@dormhub.web.id', 'password123', 'default.png', '08123456780', 'Laki-Laki', 1),
-(37, 'Nurul Huda', 'nurul.huda@dormhub.web.id', 'password123', 'default.png', '08123456712', 'Perempuan', 2),
-(38, 'Ahmad Fauzi', 'ahmad.fauzi@dormhub.web.id', 'password123', 'default.png', '08123456713', 'Laki-Laki', 2),
-(39, 'Dewi Sartika', 'dewi.sartika@dormhub.web.id', 'password123', 'default.png', '08123456714', 'Perempuan', 2),
-(40, 'Bagus Rahmat', 'bagus.rahmat@dormhub.web.id', 'password123', 'default.png', '08123456715', 'Laki-Laki', 2);
+INSERT INTO `users` (`id`, `nama_lengkap`, `email`, `password`, `foto_profil`, `nomor_hp`, `jenis_kelamin`, `level_id`, `created_at`, `updated_at`) VALUES
+(1, 'Andi Nugraha', 'andi.nugraha@dormhub.web.id', 'password123', 'default.png', '08121234567', 'Laki-Laki', 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(2, 'Rina Ayu', 'rina.ayu@dormhub.web.id', 'password123', 'default.png', '08121238976', 'Perempuan', 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(3, 'Joko Santoso', 'joko.santoso@dormhub.web.id', 'password123', 'default.png', '08121234578', 'Laki-Laki', 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(4, 'Rudi Wijaya', 'rudi.wijaya@dormhub.web.id', 'password123', 'default.png', '08127891234', 'Laki-Laki', 4, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(5, 'Fajar Sidiq', 'fajar.sidiq@dormhub.web.id', 'password123', 'default.png', '08123456789', 'Laki-Laki', 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(6, 'Gita Maharani', 'gita.maharani@dormhub.web.id', 'password123', 'default.png', '08123412345', 'Perempuan', 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(7, 'Rangga Saputra', 'rangga.saputra@dormhub.web.id', 'password123', 'default.png', '08129876432', 'Laki-Laki', 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(8, 'Sari Anggraini', 'sari.anggraini@dormhub.web.id', 'password123', 'default.png', '08123456721', 'Perempuan', 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(9, 'Ani Kartika', 'ani.kartika@dormhub.web.id', 'password123', 'default.png', '08123456788', 'Perempuan', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(10, 'Budi Santoso', 'budi.santoso@dormhub.web.id', 'password123', 'default.png', '08123456789', 'Laki-Laki', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(11, 'Citra Laras', 'citra.laras@dormhub.web.id', 'password123', 'default.png', '08123456787', 'Perempuan', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(12, 'Doni Pratama', 'doni.pratama@dormhub.web.id', 'password123', 'default.png', '08123456786', 'Laki-Laki', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(13, 'Eka Wulandari', 'eka.wulandari@dormhub.web.id', 'password123', 'default.png', '08123456785', 'Perempuan', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(14, 'Faisal Hakim', 'faisal.hakim@dormhub.web.id', 'password123', 'default.png', '08123456784', 'Laki-Laki', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(15, 'Gina Melati', 'gina.melati@dormhub.web.id', 'password123', 'default.png', '08123456783', 'Perempuan', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(16, 'Hari Wijaya', 'hari.wijaya@dormhub.web.id', 'password123', 'default.png', '08123456782', 'Laki-Laki', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(17, 'Ika Rahma', 'ika.rahma@dormhub.web.id', 'password123', 'default.png', '08123456781', 'Perempuan', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(18, 'Joko Susanto', 'joko.susanto@dormhub.web.id', 'password123', 'default.png', '08123456780', 'Laki-Laki', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(19, 'Andi Nugraha', 'andi.nugraha@dormhub.web.id', 'password123', 'default.png', '08121234567', 'Laki-Laki', 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(20, 'Rina Ayu', 'rina.ayu@dormhub.web.id', 'password123', 'default.png', '08121238976', 'Perempuan', 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(21, 'Joko Santoso', 'joko.santoso@dormhub.web.id', 'password123', 'default.png', '08121234578', 'Laki-Laki', 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(22, 'Rudi Wijaya', 'rudi.wijaya@dormhub.web.id', 'password123', 'default.png', '08127891234', 'Laki-Laki', 4, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(23, 'Fajar Sidiq', 'fajar.sidiq@dormhub.web.id', 'password123', 'default.png', '08123456789', 'Laki-Laki', 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(24, 'Gita Maharani', 'gita.maharani@dormhub.web.id', 'password123', 'default.png', '08123412345', 'Perempuan', 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(25, 'Rangga Saputra', 'rangga.saputra@dormhub.web.id', 'password123', 'default.png', '08129876432', 'Laki-Laki', 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(26, 'Sari Anggraini', 'sari.anggraini@dormhub.web.id', 'password123', 'default.png', '08123456721', 'Perempuan', 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(27, 'Ani Kartika', 'ani.kartika@dormhub.web.id', 'password123', 'default.png', '08123456788', 'Perempuan', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(28, 'Budi Santoso', 'budi.santoso@dormhub.web.id', 'password123', 'default.png', '08123456789', 'Laki-Laki', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(29, 'Citra Laras', 'citra.laras@dormhub.web.id', 'password123', 'default.png', '08123456787', 'Perempuan', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(30, 'Doni Pratama', 'doni.pratama@dormhub.web.id', 'password123', 'default.png', '08123456786', 'Laki-Laki', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(31, 'Eka Wulandari', 'eka.wulandari@dormhub.web.id', 'password123', 'default.png', '08123456785', 'Perempuan', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(32, 'Faisal Hakim', 'faisal.hakim@dormhub.web.id', 'password123', 'default.png', '08123456784', 'Laki-Laki', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(33, 'Gina Melati', 'gina.melati@dormhub.web.id', 'password123', 'default.png', '08123456783', 'Perempuan', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(34, 'Hari Wijaya', 'hari.wijaya@dormhub.web.id', 'password123', 'default.png', '08123456782', 'Laki-Laki', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(35, 'Ika Rahma', 'ika.rahma@dormhub.web.id', 'password123', 'default.png', '08123456781', 'Perempuan', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(36, 'Joko Susanto', 'joko.susanto@dormhub.web.id', 'password123', 'default.png', '08123456780', 'Laki-Laki', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(37, 'Nurul Huda', 'nurul.huda@dormhub.web.id', 'password123', 'default.png', '08123456712', 'Perempuan', 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(38, 'Ahmad Fauzi', 'ahmad.fauzi@dormhub.web.id', 'password123', 'default.png', '08123456713', 'Laki-Laki', 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(39, 'Dewi Sartika', 'dewi.sartika@dormhub.web.id', 'password123', 'default.png', '08123456714', 'Perempuan', 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(40, 'Bagus Rahmat', 'bagus.rahmat@dormhub.web.id', 'password123', 'default.png', '08123456715', 'Laki-Laki', 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(41, 'wefwef', 'msyahrulma@gmail.com', '$2a$10$lozm80m0B1i3ZuXigd31ROtbAGVy7z/UVJc8N/xf2NbHGujSHCbZu', 'default.png', '567567', 'Laki-Laki', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(42, 'df df', 'tester@gmail.com', '$2a$10$Lo1twMs9tPpbjiyJXKHZ4OA3mhRWVZp50nLMjHX1y3aFCfbNEcf7W', 'default.png', '5453535', 'Laki-Laki', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(43, 'trgtrghrtb', 'admin@gmail.com', '$2a$10$Zq64SaL0mIlFJaynZd8jx.WORvSZZ8Z0eznZlJecXS51rIRR4cRbG', 'default.png', '55454', 'Perempuan', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(44, 'cedsfefefe', 'kontits@gmail.com', '$2a$10$AuDA3..xJG/FFn33VUQM.eA4w7lrrFCk3p3EkRxCrJBLO7r96YXdi', 'default.png', '214325454354', 'Laki-Laki', 1, '2024-12-04 14:00:51', '2024-12-04 14:00:51'),
+(45, 'wefwef', 'msy4554ahrulma@gmail.com', '$2a$10$uhFEUvh4lV/F15xZWYRqOu0eTqQDBe4rggxY5RycTxcePjdB0qRdq', 'default.png', '344334', 'Laki-Laki', 1, '2024-12-04 14:02:57', '2024-12-04 14:02:57');
 
 --
 -- Indexes for dumped tables
@@ -293,6 +333,12 @@ ALTER TABLE `admin`
 ALTER TABLE `helpdesk`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `jurusan`
+--
+ALTER TABLE `jurusan`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `konfigurasi`
@@ -327,7 +373,8 @@ ALTER TABLE `level`
 --
 ALTER TABLE `mahasiswa`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`);
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `jurusan_id` (`jurusan_id`);
 
 --
 -- Indexes for table `senior_residence`
@@ -360,6 +407,12 @@ ALTER TABLE `helpdesk`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `jurusan`
+--
+ALTER TABLE `jurusan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
 -- AUTO_INCREMENT for table `konfigurasi`
 --
 ALTER TABLE `konfigurasi`
@@ -387,7 +440,7 @@ ALTER TABLE `level`
 -- AUTO_INCREMENT for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `senior_residence`
@@ -399,7 +452,7 @@ ALTER TABLE `senior_residence`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- Constraints for dumped tables
@@ -435,7 +488,8 @@ ALTER TABLE `laporan_umum`
 -- Constraints for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
-  ADD CONSTRAINT `mahasiswa_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `mahasiswa_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `mahasiswa_ibfk_2` FOREIGN KEY (`jurusan_id`) REFERENCES `jurusan` (`id`);
 
 --
 -- Constraints for table `senior_residence`

@@ -1,4 +1,4 @@
-package com.dormhub;
+package com.dormhub.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
