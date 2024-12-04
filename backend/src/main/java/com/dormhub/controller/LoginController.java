@@ -8,9 +8,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Controller
 public class LoginController {
+
+    private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
     @Autowired
     private UserService userService;
@@ -19,14 +23,17 @@ public class LoginController {
      * Menampilkan halaman login.
      */
     @GetMapping("/login")
-    public String loginPage() {
+    public String loginPage(@RequestParam(value = "error", required = false) String error, Model model) {
+        if (error != null) {
+            model.addAttribute("error", "Email atau password salah");
+        }
         return "login"; // Menampilkan halaman login.html
     }
 
     /**
      * Proses login pengguna dan pengalihan ke dashboard sesuai level.
      *
-     * @param email    Email pengguna
+     * @param username Email pengguna (atau username jika diubah sesuai Spring Security)
      * @param password Password pengguna
      * @param model    Model untuk menambahkan atribut jika login gagal
      * @return Tampilan yang sesuai (Login atau halaman dashboard)
@@ -37,16 +44,21 @@ public class LoginController {
             @RequestParam("password") String password,
             Model model) {
 
-        // Autentikasi user menggunakan service
+        logger.debug("Login attempt dengan email: {}", email);
+
+        System.out.println("Email: " + email); // Debug
+        System.out.println("Password: " + password); // Debug
+
         User user = userService.authenticate(email, password);
 
         if (user != null) {
-            String level = user.getLevel().getNama(); // Ambil level pengguna
-            
-            // Pengecekan level user
+            logger.info("Login sukses untuk user dengan email: {}", email);
+            String level = user.getLevel().getNama();
+            logger.debug("User level: {}", level);
+
             switch (level.toLowerCase()) {
                 case "mahasiswa":
-                case "senior residence": // Redirect ke dashboard mahasiswa
+                case "senior residence":
                     return "redirect:/mahasiswa/dashboard";
                 case "admin":
                     return "redirect:/admin/dashboard";
@@ -54,11 +66,13 @@ public class LoginController {
                     return "redirect:/help-desk/dashboard";
                 default:
                     model.addAttribute("error", "Level user tidak valid");
-                    return "login"; // Menampilkan kembali halaman login jika level tidak valid
+                    return "login";
             }
         } else {
+            logger.warn("Login gagal untuk email: {}", email);
             model.addAttribute("error", "Email atau password salah");
-            return "login"; // Menampilkan kembali halaman login jika login gagal
+            return "login";
         }
     }
+
 }

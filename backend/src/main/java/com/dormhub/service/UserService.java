@@ -93,10 +93,26 @@ public class UserService {
      * @return User object jika autentikasi berhasil, null jika gagal
      */
     public User authenticate(String email, String password) {
-        // Cari user berdasarkan email
+        logger.debug("Mencoba autentikasi untuk email: {}", email);
+
         Optional<User> userOptional = userRepository.findByEmail(email);
 
-        return userOptional.filter(user -> passwordEncoder.matches(password, user.getPassword()))
-                           .orElse(null); // Return null jika tidak ada user atau password tidak cocok
+        if (userOptional.isPresent()) {
+            User user = userOptional.get();
+            logger.debug("User ditemukan: {}", user.getEmail());
+            logger.debug("Stored hash: {}", user.getPassword());
+
+            if (passwordEncoder.matches(password, user.getPassword())) {
+                logger.info("Login berhasil untuk user: {}", email);
+                return user;
+            } else {
+                logger.warn("Password tidak cocok untuk user: {}", email);
+            }
+        } else {
+            logger.warn("User dengan email {} tidak ditemukan", email);
+        }
+
+        return null; // Login gagal
     }
+
 }

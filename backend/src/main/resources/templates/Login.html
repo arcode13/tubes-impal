@@ -33,7 +33,10 @@
                                         </div>
                                         <h5 class="mb-0 mt-4">Selamat Datang!</h5>
                                         <p class="text-muted mt-1 mb-4">Masukan email dan password anda untuk mengakses <b>DormHub</b>.</p>
-                                        <form method="POST" class="authentication-form">
+                                        <form method="POST" action="/login" class="authentication-form">
+                                            <div class="form-group">
+                                                <p class="text-danger" th:text="${error}"></p>
+                                            </div>
                                             <div class="form-group">
                                                 <label class="form-control-label">Email</label>
                                                 <div class="input-group input-group-merge">
@@ -42,7 +45,7 @@
                                                             <i class="icon-dual" data-feather="mail"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="email" class="form-control"  name="email" placeholder="Contoh : dormhub@example.com" value="" required>
+                                                    <input type="email" class="form-control" name="email" placeholder="Contoh : dormhub@example.com">
                                                 </div>
                                             </div>
                                             <div class="form-group mt-4">
@@ -54,12 +57,12 @@
                                                             <i class="icon-dual" data-feather="lock"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="password" class="form-control" name="password" required>
+                                                    <input type="password" class="form-control" name="password">
                                                 </div>
                                             </div>
                                             <div class="form-group mb-4">
                                                 <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" name="remember" value="1" id="checkbox-signin" checked>
+                                                    <input type="checkbox" class="custom-control-input" name="remember" value="1" id="checkbox-signin">
                                                     <label class="custom-control-label" for="checkbox-signin">Ingat Saya</label>
                                                 </div>
                                             </div>

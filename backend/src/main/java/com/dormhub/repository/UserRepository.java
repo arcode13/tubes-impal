@@ -7,13 +7,16 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {  // Ganti Integer menjadi Long untuk ID
+public interface UserRepository extends JpaRepository<User, Integer> { // Gunakan tipe data yang sesuai dengan entitas User ID
 
     boolean existsByEmail(String email);  // Mengecek apakah email sudah terdaftar
 
     Optional<User> findByEmail(String email);  // Mencari user berdasarkan email
 
-    // Anda bisa menambahkan metode query lainnya jika diperlukan
-    // Contoh query tambahan berdasarkan level atau status lainnya
-    // Optional<User> findByLevel_Id(Long levelId);
+    // Tambahkan query method jika diperlukan
+    Optional<User> findByEmailAndLevel_Id(String email, Integer levelId); // Mencari user berdasarkan email dan level
+
+    // Contoh query dengan kustom SQL jika dibutuhkan
+    // @Query("SELECT u FROM User u WHERE u.email = ?1 AND u.level.id = ?2")
+    // Optional<User> findUserByEmailAndLevel(String email, Integer levelId);
 }
